@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamp</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/jpg" href="logosETC/newLampSF04.jpg" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+    <div id="nav"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            $("#nav").load("nav.html");
+        });
+    </script>
+    
+    <div class="container-cadastro">
+
+
+        <div class="info-cadastro">
+            <img src="assets/comunidade.png" alt="" srcset="">
+            <h1>O primeiro passo para uma aventura.</h1>
+            <p>O primeiro passo para desbloquear um mundo de oportunidades educacionais
+                e crescimento pessoal.</p>
+            <p>Ao fazê-lo, você se torna parte de uma comunidade
+                dedicada ao conhecimento, onde o aprendizado é flexível, acessível
+                e adaptado às suas necessidades.</p>
+
+        </div>
+
+        <div class="cadastro">
+            <div class="texto-cadastro">
+
+                <h2>Cadastre-se Gratuitamente</h2>
+                <p>Campos marcados com * são obrigatórios</p>
+
+            </div>
+            <form action="" method="post" enctype="multipart/form-data">
+
+                <p><input type="text" name="apelido" id="" placeholder="Apelido *"></p>
+
+                <p><input type="text" name="nome" id="" placeholder="Nome *"></p>
+
+                <p><input type="text" name="email" id="" placeholder="Email *"></p>
+
+                <p><input type="text" name="tel" id="" placeholder="Telefone"></p>
+
+                <p><input type="date" name="nasc" id=""></p>
+
+                <div class="foto">
+                    <p>Foto: </p>
+                    <p id="idfoto"><label for="foto">Escolher Foto</label><input type="file" name="foto" id="foto"></p>
+                </div>
+
+                <p><input type="password" name="senha" id="" placeholder="Senha *"></p>
+
+                <div class="termos-priv">
+                    <p>Ao clicar no botão abaixo, indicará que leu e concorda com os
+                        Termos de Serviço
+                        e os
+                        Termos de Privacidade.</p>
+                </div>
+                <p id="botao"><input type="submit" value="Enviar" id="bt_login"></p>
+            </form>
+        </div>
+
+
+
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamp</title>
+    <link rel="stylesheet" href="style-dashboard.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="nav"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            $("#nav").load("nav.html");
+        });
+    </script>
+    <div class="page">
+        <div class="sidebar">
+            <div class="top-container">
+                <h1 class="title-screen">Dashboard</h1>
+
+                <div class="pic-container">
+                    <img src="6.webp" alt="">
+                    <div class="status">
+                        <h2>Aneba</h2>
+                        <p><span>•</span>Online</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-container">
+                <ul class="nav-items">
+                    <li class="nav-item active">
+                        <a href="#">
+                            <i class="bi bi-bar-chart-fill"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="bi bi-person-fill"></i>
+                            Conta
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="quizzes.html">
+                            <i class="bi bi-question-octagon-fill"></i>
+                            Quizzes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="bi bi-credit-card-2-front-fill"></i>
+                            Flash Cards
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                           <i class="bi bi-gear-fill"></i> 
+                            Configurações
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="main">
+            <div class="user-data">
+                <h1>Aproveitamento</h1>
+                <ul class="subjects">
+                    <li>Matematica <span></span></li>
+                    <li>Biologia <span></span></li>
+                    <li>Geografia <span></span></li>
+                </ul>
+
+                <!-- TODO -->
+                <canvas class="chart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var ctx = document.querySelector('canvas').getContext('2d');
+
+        const data1 = [
+            Math.floor(Math.random() * 101), Math.floor(Math.random() * 101),
+            Math.floor(Math.random() * 101), Math.floor(Math.random() * 101),
+            Math.floor(Math.random() * 101)
+        ];
+        const data2 = [
+            Math.floor(Math.random() * 101), Math.floor(Math.random() * 101),
+            Math.floor(Math.random() * 101), Math.floor(Math.random() * 101),
+            Math.floor(Math.random() * 101)
+        ];
+        const data3 = [
+            Math.floor(Math.random() * 101), Math.floor(Math.random() * 101),
+            Math.floor(Math.random() * 101), Math.floor(Math.random() * 101),
+            Math.floor(Math.random() * 101)
+        ];
+
+        const averages = [
+            Math.round(data1.reduce((a, b) => a + b, 0) / data1.length),
+            Math.round(data2.reduce((a, b) => a + b, 0) / data2.length),
+            Math.round(data3.reduce((a, b) => a + b, 0) / data3.length)
+        ]
+
+        const subjectElements =  document.querySelectorAll(".subjects li span");
+
+        subjectElements.forEach((x, i) => {
+            x.innerHTML = averages[i] + "%";
+        })
+        var data = {
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio'],
+            datasets: [{
+                label: 'Matemática',
+                data: data1,
+                backgroundColor: 'rgba(69, 114, 199, 0.5)',
+            },
+            {
+                label: 'Biologia',
+                data: data2,
+                backgroundColor: 'rgba(55, 93, 164, 0.5)',
+            },
+            {
+                label: 'Geografia',
+                data: data3,
+                backgroundColor: 'rgba(185, 202, 232, 0.5)',
+            }]
+        };
+
+        // Configurações do gráfico
+        var options = {
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                },
+                tooltip: { 
+                    callbacks: {
+                        label: function (context) {
+                            return context.dataset.label + ': ' + context.formattedValue + '%';
+                        }
+                    }
+                }
+            },
+            responsive: true,
+            indexAxis: 'y',
+            scales: {
+                y: {
+                    beginAtZero: true
+                },
+                x: {
+                    ticks: {
+                        callback: function(value, index, values) {
+                            return value + "%";
+                        } 
+                    },
+                }
+            }
+        };
+
+        // Criando o gráfico de barras horizontais
+        var meuGrafico = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: options
+        });
+        </script>
+</body>
+</html>
+
+
+
+<!-- backgroundColor: 'rgba(69, 114, 199, 0.5)', -->
+<!-- backgroundColor: 'rgba(55, 93, 164, 0.5)', -->
+<!-- backgroundColor: 'rgba(185, 202, 232, 0.5)', -->

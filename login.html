@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamp</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/jpg" href="logosETC/newLampSF04.jpg" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="nav"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            $("#nav").load("nav.html");
+        });
+    </script>
+    
+    <div class="container-login">
+
+        <div class="info-login">
+
+        </div>
+
+        <div class="login">
+            <img src="logosETC/newLampSF03.png" id="img_login" alt="">
+            <h3>Entre em Sua Conta!</h3>
+
+            <p>Estamos felizes em te ver novamente! </p>
+            <p>Retome sua aventura de onde você parou fazendo login</p>
+
+            <form action="login.act.php" method="post" enctype="multipart/form-data">
+                <p><input type="text" name="email" id="" placeholder="Email"></p>
+                <p><input type="password" name="senha" id="" placeholder="Senha"></p>
+                <p id="botao"><input type="submit" value="Entrar" id="bt_login"></p>
+            </form>
+
+        </div>
+        
+    </div>
+</body>
+</html>
