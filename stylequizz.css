@@ -1,0 +1,94 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "moderna";
+}
+
+a {
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: "moderna";
+    src: url("static/Urbanist-Regular.ttf");
+}
+:root{
+    --corTexto: #004471;
+    --corTextoDestaque: #ffffff;
+    --fundoQuestaoDestaque: #0FD9DD;
+    --fundoBolinha: #DCFFFF;
+}
+
+#containerquizz {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: #DCFFFF   ;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--corTexto);
+}
+
+.pergunta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 15%;
+    width: 75%;
+    margin-top: 5%;
+}
+#titulo{
+    font-size: 20px;
+}
+.pergunta p{
+    font-size: 30px;
+    text-align: center;
+}
+.quizopc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70%;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.resposta{
+    height: 15%;
+    width: 50%;
+    margin-top: 1%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    color: var(--corTexto);
+    transition: 0.5s;
+}
+.resposta h3{
+    clip-path: circle(50%);
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    margin-left: 3%;
+    background-color: var(--fundoBolinha);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+.resposta p{
+    margin-left: 3%;
+    width: 85%;
+    font-size: 20px;
+}
+.resposta:hover{
+    background-color: var(--fundoQuestaoDestaque);
+    color: var(--corTextoDestaque);
+    --fundoBolinha: #004471;
+}
