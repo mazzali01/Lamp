@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lamp</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylequizz.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
@@ -14,44 +15,36 @@
 
 <body>
     <div id="nav"></div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            $("#nav").load("nav.html");
-        });
-    </script>
-    
-    <div id="containnerquiz">
-        <div class=quest>
-            <div id="quest_content">
-                <h3>Conteudo aqui</h3>
-            </div>
 
+    <div id="containerquizz">
+        <div class=pergunta>
+            <p id="titulo">Questão</p>
+            <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit"</p>
         </div>
         <div class="quizopc">
-            <form action="">
-                <input type="button" value="">
-                <input type="button" value="">
-                <input type="button" value="">
-                <input type="button" value="">
-            </form>
-            <div class="centralizado">
-                <input type="button" value="Checar" id="enviaresp">
-                <input type="button" value="Proximo " id="prox">
+            <div class="resposta">
+                <h3>A</h3>
+                <p>Ore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
+                    voluptas sit aspernatur aut odit aut fu</p>
+            </div>
+            <div class="resposta">
+                <h3>B</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+            </div>
+            <div class="resposta">
+                <h3>C</h3>
+                <p>Scing elit, sed do eiusmod tempor incididunt </p>
+            </div>
+            <div class="resposta">
+                <h3>D</h3>
+                <p>Dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut
+                    labore et</p>
             </div>
         </div>
     </div>
-
-    <script>
-        const enviaresp = document.getElementById("enviaresp")
-        const prox = document.getElementById("prox")
-
-
-        enviaresp.addEventListener("click", function () {
-            prox.style.display = 'inline';
-            enviaresp.style.display = 'none';
-
-        });
-    </script>
 </body>
 
 </html>
