@@ -1,20 +1,3 @@
-const scrollImages = document.querySelectorAll(".scroll-image");
-
-window.addEventListener("scroll", () => {
-    const scrolled = window.scrollY;
-
-    scrollImages.forEach(image => {
-        const translateY = scrolled * -1;
-        image.style.transform = ` translateY(${translateY}px) rotate(-15deg)`;
-    });
-});
-
-
-// var cssLogoVariavel = getComputedStyle(document.body).getPropertyValue("--logo").slice(1, -1);
-// console.log(cssLogoVariavel)
-// const logo = document.querySelectorAll('#imgFundo')
-// document.getElementById("imgFundo").src = cssLogoVariavel;
-
 const logo = document.querySelector('#imgFundo')
 
 
