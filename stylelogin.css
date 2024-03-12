@@ -1,0 +1,96 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "moderna";
+}
+
+a {
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: "moderna";
+    src: url("static/Urbanist-Regular.ttf");
+}
+
+:root {
+    --color1: #daf3ea;
+    --color2: #72d9bb;
+    --color3: #35c594;
+    --color4: #142c4c;
+    --color5: #0d0f36;
+    --padding-1: 30px;
+    --padding-2: 60px;
+    --padding-3: 180px;
+}
+
+
+/* login */
+
+.container-login {
+    display: flex;
+    height: 90VH;
+    width: 100%;
+    padding-top: 50px;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(#daf3ea, #daf3ea, #72d9bb);
+}
+
+#img_login {
+    max-width: 200px;
+    animation: moveUpDown 4s infinite alternate;
+    margin-bottom: 30px;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+}
+
+.login input {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#bt_login {
+    background: var(--color3);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+}
+
+form p {
+    display: flex;
+    margin-bottom: 2%;
+    width: 70%;
+}
+
+form p input {
+    border: none;
+    padding: 10px;
+    width: 100%;
+    background-color: var(--color2);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form p input::placeholder {
+    color: var(--color4);
+    font-size: 16px;
+    font-weight: 700;
+    opacity: 80%;
+}

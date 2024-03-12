@@ -1,0 +1,204 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "moderna";
+}
+
+a {
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: "moderna";
+    src: url("static/Urbanist-Regular.ttf");
+}
+
+:root {
+    --color1: #daf3ea;
+    --color2: #72d9bb;
+    --color3: #35c594;
+    --color4: #142c4c;
+    --color5: #0d0f36;
+    --padding-1: 30px;
+    --padding-2: 60px;
+    --padding-3: 180px;
+}
+
+
+body {
+    background-color: var(--color1);
+    min-height: 100vh;
+    max-width: 100vw;
+    overflow-x: hidden;
+    
+}
+/* CADASTRO */
+
+.container-cadastro {
+    color: var(--color5);
+    background: linear-gradient(#daf3ea, #daf3ea, #72d9bb);
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.info-cadastro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    width: 50%;
+    height: 100%;
+}
+
+.info-cadastro>h1 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.info-cadastro p {
+    text-align: justify;
+    width: 75%;
+}
+
+.info-cadastro img {
+    width: 300px;
+    margin-bottom: 25px;
+}
+
+.cadastro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+
+}
+
+.texto-cadastro {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+}
+
+form p {
+    display: flex;
+    margin-bottom: 2%;
+    width: 70%;
+}
+
+form p input {
+    border: none;
+    padding: 10px;
+    width: 100%;
+    background-color: var(--color2);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form p input::placeholder {
+    color: var(--color4);
+    font-size: 16px;
+    font-weight: 700;
+    opacity: 80%;
+}
+
+.foto {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 550;
+}
+
+#idfoto {
+    display: flex;
+    margin-bottom: 2%;
+    width: 70%;
+}
+
+#idfoto:hover {
+    cursor: pointer;
+}
+
+.foto>p>label {
+    border: none;
+    padding: 10px;
+    width: 100%;
+    background-color: var(--color2);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#botao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input:is([type="file"]) {
+    display: none;
+}
+
+input:is([type="date"]) {
+    color: var(--color4);
+    font-size: 16px;
+    text-indent: 5px;
+    padding: 7px 0;
+}
+
+input:is([type="submit"]) {
+    width: 200px;
+    font-size: 18px;
+    background: var(--color2);
+    border-radius: 5px;
+}
+
+input:is([type="submit"]):hover {
+    cursor: pointer;
+}
+
+.termos-priv {
+    font-size: 12px;
+    width: 110%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.termos-priv p {
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.termos-priv p a {
+    padding-left: 3px;
+}
