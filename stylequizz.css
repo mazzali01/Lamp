@@ -16,10 +16,14 @@ a {
     src: url("static/Urbanist-Regular.ttf");
 }
 :root{
-    --corTexto: #004471;
-    --corTextoDestaque: #ffffff;
-    --fundoQuestaoDestaque: #0FD9DD;
-    --fundoBolinha: #DCFFFF;
+    --color1: #daf3ea;
+    --color2: #72d9bb;
+    --color3: #35c594;
+    --color4: #142c4c;
+    --color5: #0d0f36;
+    --padding-1: 30px;
+    --padding-2: 60px;
+    --padding-3: 180px;
 }
 
 #containerquizz {
@@ -30,32 +34,33 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--corTexto);
+    color: var(--color4);
+    background: linear-gradient(to top, var(--color2), var(--color1));
 }
 
-.pergunta {
+#pergunta {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 15%;
     width: 75%;
-    margin-top: 5%;
 }
 #titulo{
-    font-size: 20px;
+    font-size: 15px;
 }
-.pergunta p{
-    font-size: 30px;
+#pergunta p{
+    font-size: 25px;
     text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
-.quizopc {
+#quizopc {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
-    height: 70%;
+    height: 55%;
     width: 100%;
-    margin-top: 5%;
 }
 
 .resposta{
@@ -67,7 +72,7 @@ a {
     flex-direction: row;
     align-items: center;
     background-color: rgb(255, 255, 255);
-    color: var(--corTexto);
+    color: var(--color4);
     transition: 0.5s;
 }
 .resposta h3{
@@ -76,7 +81,7 @@ a {
     width: 50px;
     text-align: center;
     margin-left: 3%;
-    background-color: var(--fundoBolinha);
+    background-color: var(--color1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,7 +93,8 @@ a {
     font-size: 20px;
 }
 .resposta:hover{
-    background-color: var(--fundoQuestaoDestaque);
-    color: var(--corTextoDestaque);
-    --fundoBolinha: #004471;
+    background-color: var(--color3);
+    color: white;
+    --color1: var(--color4);
+    cursor: pointer;
 }
