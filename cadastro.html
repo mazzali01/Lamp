@@ -43,28 +43,29 @@
             </div>
             <form action="" method="post" enctype="multipart/form-data">
 
-                <p><input type="text" name="apelido" id="" placeholder="Apelido *"></p>
+                <p><input type="text" name="apelido" id="apelido" placeholder="Apelido *"></p>
 
-                <p><input type="text" name="nome" id="" placeholder="Nome *"></p>
+                <p><input type="text" name="nome" id="nome" placeholder="Nome *"></p>
 
-                <p><input type="text" name="email" id="" placeholder="Email *"></p>
+                <p><input type="text" name="email" id="email" placeholder="Email *"></p>
 
-                <p><input type="text" name="tel" id="" placeholder="Telefone"></p>
+                <p><input type="text" name="tel" id="tel" placeholder="Telefone"></p>
 
-                <p><input type="date" name="nasc" id=""></p>
+                <p><input type="date" name="nasc" id="nasc"></p>
 
-                <div class="foto">
+                <p><input type="password" name="senha" id="senha" placeholder="Senha *"></p>
+                <!-- <div class="foto">
                     <p>Foto: </p>
                     <p id="idfoto"><label for="foto">Escolher Foto</label><input type="file" name="foto" id="foto"></p>
-                </div>
+                </div> -->
 
-                <p><input type="password" name="senha" id="" placeholder="Senha *"></p>
+
 
                 <div class="termos-priv">
                     <p>Ao clicar no botão abaixo, indicará que leu e concorda com os
                         Termos de Serviço
-                        e os
-                        Termos de Privacidade.</p>
+                            e os
+                            Termos de Privacidade.</p>
                 </div>
                 <p id="botao"><input type="submit" value="Enviar" id="bt_login"></p>
             </form>
@@ -73,7 +74,47 @@
 
 
     </div>
-    <script src="index.js"></script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+        import { getDatabase, ref, set, get, child} from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+        apiKey: "AIzaSyBfJuEDQ7KIPO_feHPmtY4DXRPP-ZqpmVY",
+        authDomain: "lamp-7fb6e.firebaseapp.com",
+        databaseURL: "https://lamp-7fb6e-default-rtdb.firebaseio.com",
+        projectId: "lamp-7fb6e",
+        storageBucket: "lamp-7fb6e.appspot.com",
+        messagingSenderId: "816320075310",
+        appId: "1:816320075310:web:2ba343469b2ade2886f1bf"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const bd = getDatabase(app);
+
+        const btnCadastro = document.getElementById('bt_login');
+        const apelido = document.getElementById('apelido');
+        const nome = document.getElementById('nome');
+        const email = document.getElementById('email'); 
+        const tel = document.getElementById('tel');
+        const dataNasc = document.getElementById('nasc');
+        const senha = document.getElementById('senha');
+
+        btnCadastro.addEventListener('click', function(e){
+            e.preventDefault();
+            set(ref(bd, 'user/' + apelido.value),{
+                Apelido: apelido.value,
+                Nome: nome.value,
+                Email: email.value,
+                Telefone: tel.value,
+                Nascimento: dataNasc.value, 
+                Senha: senha.value
+            });
+            alert("FUNCIONOU PORRA")
+        });
+    </script>
 </body>
 
 </html>
