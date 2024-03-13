@@ -38,12 +38,13 @@ body {
 
 #nav {
     display: flex;
-    background: var(--color4);
-    height: 10vh;
+    background: var(--color3);
+    height: 7vh;
     width: 100%;
     align-items: center;
     justify-content: space-between;
     z-index: 1000;
+    position: fixed;
 }
 
 #nav>input {
