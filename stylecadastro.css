@@ -41,7 +41,7 @@ body {
     color: var(--color5);
     background: linear-gradient(#daf3ea, #daf3ea, #72d9bb);
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
     display: flex;
     flex-direction: row;
 }
