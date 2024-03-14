@@ -36,8 +36,8 @@ btnCadastro.addEventListener('click', function(e){
     }).then(()=>{
       alert("O formulário foi enviado com sucesso!");
     })
-    .catch(() =>{
-      alert("Erro ao enviar formulário");
+    .catch((error) =>{
+      console.log("o seguinte erro foi encontrado: " + error);
     });
 });
  ;
