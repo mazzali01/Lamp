@@ -41,6 +41,14 @@ a {
     background: linear-gradient(#daf3ea, #daf3ea, #72d9bb);
 }
 
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(15px);
+    }
+    100% {
+        transform: translateY(-15px);
+    }
+}
 #img_login {
     max-width: 200px;
     animation: moveUpDown 4s infinite alternate;
@@ -72,6 +80,7 @@ form {
     align-items: center;
     width: 80%;
     height: 80%;
+    margin-top: 5%;
 }
 
 form p {
