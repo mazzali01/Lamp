@@ -93,8 +93,8 @@ a {
     font-size: 20px;
 }
 .resposta:hover{
-    background-color: var(--color3);
+    background-color: var(--color2);
     color: white;
-    --color1: var(--color4);
+    --color1: var(--color3);
     cursor: pointer;
 }
