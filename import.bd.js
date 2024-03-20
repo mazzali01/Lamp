@@ -1,5 +1,6 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-import { getDatabase, ref, set, get, child} from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+import { getDatabase, ref, set, get, child, onValue} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword}from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -11,34 +12,3 @@ storageBucket: "lamp-7fb6e.appspot.com",
 messagingSenderId: "816320075310",
 appId: "1:816320075310:web:2ba343469b2ade2886f1bf"
 };
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const bd = getDatabase(app);
-
-const btnCadastro = document.getElementById('bt_login');
-const apelido = document.getElementById('apelido');
-const nome = document.getElementById('nome');
-const email = document.getElementById('email'); 
-const tel = document.getElementById('tel');
-const dataNasc = document.getElementById('nasc');
-const senha = document.getElementById('senha');
-
-btnCadastro.addEventListener('click', function(e){
-    e.preventDefault();
-    set(ref(bd, 'Users/' + apelido.value),{
-        Apelido: apelido.value,
-        Nome: nome.value,
-        Email: email.value,
-        Telefone: tel.value,
-        Nascimento: dataNasc.value, 
-        Senha: senha.value
-    }).then(()=>{
-      alert("O formulário foi enviado com sucesso!");
-    })
-    .catch((error) =>{
-      console.log("o seguinte erro foi encontrado: " + error);
-    });
-});
- ;
-    
