@@ -47,6 +47,41 @@
             </div>
         </div>
     </div>
+
+    <script type="module">
+        import { getDatabase } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+        
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBfJuEDQ7KIPO_feHPmtY4DXRPP-ZqpmVY",
+            authDomain: "lamp-7fb6e.firebaseapp.com",
+            databaseURL: "https://lamp-7fb6e-default-rtdb.firebaseio.com",
+            projectId: "lamp-7fb6e",
+            storageBucket: "lamp-7fb6e.appspot.com",
+            messagingSenderId: "816320075310",
+            appId: "1:816320075310:web:2ba343469b2ade2886f1bf"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const bd = getDatabase(app);
+        const auth = getAuth(); // Usando getAuth aqui
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const user = auth.currentUser;
+            console.log(user);
+            const userLoggedIn = localStorage.getItem('userLoggedIn');
+            if (userLoggedIn) {
+                console.log('Usuário está logado.');
+                // Execute qualquer ação necessária para um usuário logado
+            } else {
+                console.log('Usuário não está logado.');
+                // Execute qualquer ação necessária para um usuário não logado, como redirecioná-lo para a página de login
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
 </body>
 
 </html>

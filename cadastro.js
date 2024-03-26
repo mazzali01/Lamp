@@ -33,7 +33,7 @@ btnCadastro.addEventListener('click', function(e){
     createUserWithEmailAndPassword(auth, emailValue, senhaValue).then((userCredential) =>{
         const user = userCredential.user;
         alert("Usuário criado com sucesso: " + apelido.value);
-        logado();
+
 
         return set(ref(bd, 'Users/' + apelido.value),{
             Apelido: apelido.value,
@@ -46,6 +46,7 @@ btnCadastro.addEventListener('click', function(e){
 
     }).then(() =>{
         alert("salvo com sucesso")
+        logado();
     }).catch(error =>{
         console.log("o seguinte erro foi evidenciado: " + error);
         alert("erro ao criar o usuário: " + error);
