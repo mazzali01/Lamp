@@ -83,12 +83,6 @@
                 console.log("Erro ao enviar email de alteração de senha: " + error.message);
             })
         });
-
-        auth.onAuthStateChanged(user =>{
-            if(user){
-                window.location = 'dashboard.html';
-            }
-        })
     </script>
 
     
