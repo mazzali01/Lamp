@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getDatabase, get, ref, child } from "firebase/database";
 
-import { loadQuestion } from '../database/loadQuestions.js';
-import { verificar } from '../database/checkAnswers.js';
-import { setResp } from '../database/saveResps.js';
-import { mostrarResultado } from '../database/showResults.js';
-import { getSelected } from "../database/utils.js";
-import { saveUserData } from "../database/setResults.js";
-import { atualizarAcertos } from "../database/getAcertos.js";
+import { loadQuestion } from './loadQuestions.js';
+import { verificar } from './checkAnswers.js';
+import { setResp } from './saveResps.js';
+import { mostrarResultado } from './showResults.js';
+import { getSelected } from "./utils.js";
+import { saveUserData } from "./setResults.js";
+import { atualizarAcertos } from "./getAcertos.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBfJuEDQ7KIPO_feHPmtY4DXRPP-ZqpmVY",

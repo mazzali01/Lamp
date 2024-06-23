@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, get, child, onValue, query, orderByKey, limitToLast } from "firebase/database";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { getTotalGeral, getLumens, getAcertos, getWeekProgress, getTopFour } from "./database/getResults.js";
+import { getTotalGeral, getLumens, getAcertos, getWeekProgress, getTopFour } from "./getResults.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {

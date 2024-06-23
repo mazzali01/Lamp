@@ -1,6 +1,6 @@
 import { getDatabase, ref, set } from "firebase/database";
 import { getAuth } from "firebase/auth";
-import { getSelected } from './database/utils.js';
+import { getSelected } from './utils.js';
 
 const bd = getDatabase();
 const auth = getAuth();

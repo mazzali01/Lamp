@@ -1,5 +1,5 @@
 import { getDatabase, ref, get } from "firebase/database";
-import { getSelected } from './database/utils.js';
+import { getSelected } from 'database/utils.js';
 
 const bd = getDatabase();
 const inputs = document.querySelectorAll("input[type='radio']");

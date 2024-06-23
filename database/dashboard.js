@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set, get, child, onValue, update } from "firebase/database";
 import { getAuth,  onAuthStateChanged}from "firebase/auth";
-import {getResults} from './database/results.js';
+import {getResults} from './results.js';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
