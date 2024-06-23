@@ -1,0 +1,245 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "moderna";
+}
+
+a {
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: "moderna";
+    src: url("assets/Urbanist-Regular.ttf");
+}
+
+:root {
+    --color1: #daf3ea;
+    --color2: #72d9bb;
+    --color3: #35c594;
+    --color4: #142c4c;
+    --color5: #0d0f36;
+    --padding-1: 10px;
+    --padding-2: 20px;
+    --padding-3: 30px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    padding-top: 7vh;
+    background: linear-gradient(to bottom, var(--color1), white);
+}
+
+.fichasGirino {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 30%;
+    align-items: center;
+    justify-content: space-evenly;
+    border: solid 1px var(--color3);
+}
+
+.fichasGirino img {
+    animation: girino 7s infinite alternate ease-in-out;
+    height: 30%;
+}
+
+.packs {
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5%;
+    justify-content: center;
+}
+
+.pack {
+    width: 27%;
+    height: fit-content;
+    border: solid 1px var(--color1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.5s;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.pack h1 {
+    font-size: clamp(20px, 3vh, 60px);
+    padding: 5%;
+}
+
+.pack p {
+    font-size: clamp(14px, 2vh, 60px);
+    padding: 5%;
+}
+
+.lumens {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 15vh;
+    /* Ajuste a altura conforme necessário */
+    padding: 20%;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(var(--color3), var(--color4));
+}
+
+.pack:hover {
+    transform: translateY(-15px);
+    border-color: var(--color2);
+    cursor: pointer;
+}
+
+.lumens img {
+    position: absolute;
+    width: 30%;
+    /* Ajuste o tamanho conforme necessário */
+    object-fit: contain;
+    animation: moveRandom 20s infinite alternate ease-in-out,
+        rotateRandom 60s infinite linear;
+}
+
+/* Posições iniciais aleatórias */
+#lumens3 img:nth-child(1) {
+    top: 10%;
+    left: 20%;
+    animation: moveRandom 30s infinite alternate ease-in-out;
+    animation-delay: 0s;
+}
+
+#lumens3 img:nth-child(2) {
+    top: 50%;
+    left: 60%;
+    animation: moveRandom 25s infinite alternate ease-in-out;
+    animation-delay: 1s;
+}
+
+#lumens3 img:nth-child(3) {
+    top: 70%;
+    left: 30%;
+    animation: moveRandom 30s infinite alternate ease-in-out;
+    animation-delay: 2s;
+}
+
+#lumens3 img:nth-child(4) {
+    top: 30%;
+    left: 70%;
+    animation: moveRandom 35s infinite alternate ease-in-out;
+    animation-delay: 3s;
+}
+
+#lumens3 img:nth-child(5) {
+    top: 60%;
+    left: 10%;
+    animation: moveRandom 30s infinite alternate ease-in-out;
+    animation-delay: 4s;
+}
+
+#lumens3 img:nth-child(6) {
+    top: 40%;
+    left: 20%;
+    animation: moveRandom 20s infinite alternate ease-in-out;
+    animation-delay: 5s;
+}
+
+#lumens2 img:nth-child(1) {
+    top: 20%;
+    left: 60%;
+    animation: moveRandom 35s infinite alternate ease-in-out;
+    animation-delay: 0s;
+}
+
+#lumens2 img:nth-child(2) {
+    top: 50%;
+    left: 20%;
+    animation: moveRandom 30s infinite alternate ease-in-out;
+    animation-delay: 1s;
+}
+
+@keyframes moveRandom {
+    0% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(50px, 20px) scale(1.4);
+    }
+
+    50% {
+        transform: translate(-30px, -50px) scale(0.8) rotate(180deg);
+    }
+
+    75% {
+        transform: translate(20px, 40px) scale(0.6);
+    }
+
+    100% {
+        transform: translate(-20px, -30px) scale(1) rotate(360deg);
+    }
+}
+
+@keyframes girino {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-100px, 30px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Responsividade */
+@media screen and (max-width: 1024px) {
+    .packs {
+        width: 90%;
+        gap: 3%;
+    }
+
+    .pack {
+        width: 25%;
+        height: 30vh;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .packs {
+        width: 95%;
+        height: 83%;
+    }
+
+    .pack {
+        width: 50%;
+        height: 25vh;
+
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .packs {
+        width: 100%;
+        height: 83%;
+    }
+
+}

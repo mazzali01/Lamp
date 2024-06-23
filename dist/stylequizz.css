@@ -1,0 +1,256 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "moderna";
+    transition: 0.25s;
+}
+
+a {
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: "moderna";
+    src: url("assets/Urbanist-Regular.ttf");
+}
+
+:root {
+    --color1: #daf3ea;
+    --color2: #72d9bb;
+    --color3: #35c594;
+    --color4: #142c4c;
+    --color5: #0d0f36;
+    --padding-1: 30px;
+    --padding-2: 60px;
+    --padding-3: 180px;
+}
+
+#containerquizz {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: #DCFFFF;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color4);
+    background: linear-gradient(to bottom, var(--color1), white);
+}
+
+#pergunta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+}
+
+#fonte {
+    font-size: clamp(14px, 1.5vh, 30px);
+}
+
+#pergunta p {
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#enunciado,
+#comando {
+    font-size: clamp(14px, 2.5vh, 50px);
+}
+
+#quizopc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+}
+
+.resposta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15%;
+    width: 50%;
+    margin-top: 1%;
+    border-radius: 15px;
+    border: solid 2px var(--color1);
+    transition: 0.25s;
+    position: relative;
+}
+
+.resposta h3 {
+    clip-path: circle(40%);
+    display: flex;
+    position: absolute;
+    background-color: var(--color1);
+    padding: 25px;
+    height: 90%;
+    align-items: center;
+    justify-content: center;
+    left: 2%;
+    z-index: 1;
+}
+
+.resposta:hover {
+    transform: translateY(-5px);
+    background-color: var(--color1);
+    cursor: pointer;
+    --color1: var(--color2);
+
+}
+
+.label-resp {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 15px;
+    transition: 0.25s;
+}
+
+
+.resposta input:checked~.label-resp {
+    border: 2px solid var(--color3);
+    background-color: var(--color2);
+    color:white;
+    font-size: 18px;
+    font-weight: 600;
+    --color1: var(--color4);
+}
+
+
+/* voltar */
+.voltar {
+    position: absolute;
+    display: flex;
+
+}
+
+.voltar a {
+    color: var(--color5);
+    font-size: 35px;
+    margin: 100% 100%;
+}
+
+.buttons {
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    gap: 20%;
+    margin: 2%;
+}
+
+input:is([type='button']) {
+    width: auto;
+    font-size: clamp(18px, 1.7vh, 30vh);
+    background: var(--color2);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 1px solid var(--color3);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    gap: 5%;
+}
+
+input:is([type='button']):hover {
+    cursor: pointer;
+    scale: 105%;
+}
+
+#back-arrow{
+    transition: 0.3s;
+    color: var(--color4);
+}
+
+#back-arrow:hover{
+    cursor: pointer;
+    scale: 105%;
+    color: var(--color5);
+}
+
+#submit {
+    display: none;
+}
+
+#nextQuestion {
+    display: none;
+}
+
+
+/* Resultado da verificação */
+
+.resultado {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+    margin: 2vh 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .resposta {
+        width: 95%;
+    }
+
+    #pergunta {
+        width: 80%;
+    }
+
+    #quizopc {
+        width: 80%;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #pergunta {
+        width: 90%;
+    }
+
+    #enunciado,
+    #comando {
+        font-size: clamp(14px, 2vh, 50px);
+    }
+
+    .resposta {
+        width: 90%;
+    }
+
+    .resultado {
+        width: 90%;
+    }
+
+    #quizopc {
+        width: 90%;
+        height: 45%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

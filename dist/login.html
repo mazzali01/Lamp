@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamp - Login</title>
+    <link rel="stylesheet" href="stylelogin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="assets/newLampSF05.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+        <!-- Tela de Carregamento -->
+        <div class="loadingScreen">
+            <script type="module" src="importLoading.js"></script>
+        </div>
+
+    <div id="header">
+        <script src="import.nav.js"></script>
+        <script type="module" src="../database/nav.js"></script>
+    </div>
+
+    <div class="container-login">
+
+
+        <div class="login">
+            <img src="assets/newLampSF03.png" id="img_login" alt="">
+            <h3>Entre em Sua Conta!</h3>
+            <p>Estamos felizes em te ver novamente! </p>
+            <p>Retome sua aventura de onde você parou fazendo login</p>
+
+            <form action="" method="post" enctype="multipart/form-data">
+                <p><input type="text" name="email" id="email" placeholder="Email"></p>
+                <p><input type="password" name="senha" id="senha" placeholder="Senha"></p>
+                <p id="button"><input type="submit" value="Entrar" id="bt_login"></p>
+            </form>
+
+            <!-- <div>
+                <p>Ou</p>
+                <button id="loginWithGoogle"> <i class="fa-brands fa-google" ></i> Entrar com o Google</button>
+            </div> -->
+            <p>Não possui uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+            <p><a href="" id="altSenha">Esqueci minha senha</a></p>
+
+        </div>
+
+    </div>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+        import { getAuth, sendPasswordResetEmail, onAuthStateChanged}from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+        apiKey: "AIzaSyBfJuEDQ7KIPO_feHPmtY4DXRPP-ZqpmVY",
+        authDomain: "lamp-7fb6e.firebaseapp.com",
+        databaseURL: "https://lamp-7fb6e-default-rtdb.firebaseio.com",
+        projectId: "lamp-7fb6e",
+        storageBucket: "lamp-7fb6e.appspot.com",
+        messagingSenderId: "816320075310",
+        appId: "1:816320075310:web:2ba343469b2ade2886f1bf"
+        };
+
+        const app   = initializeApp(firebaseConfig);
+        const auth  = getAuth();
+
+
+        const altSenha = document.getElementById('altSenha');
+        altSenha.addEventListener('click', (e) =>{
+            const user = auth.currentUser;
+            const email = prompt('insira o seu email aqui:');
+
+
+            e.preventDefault();
+            sendPasswordResetEmail(auth, email).then(() => {
+                alert("enviamos um email de alteração de senha para você");
+            }).catch((error) => {
+                console.log("Erro ao enviar email de alteração de senha: " + error.message);
+            })
+        });
+    </script>
+
+    
+    <script type="module" src="../database/login.js"></script>
+</body>
+
+</html>

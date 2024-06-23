@@ -1,0 +1,183 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "moderna";
+    font-size: 14px; /* Definindo o tamanho mínimo de fonte para telas mobile */
+}
+
+a {
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: "moderna";
+    src: url("assets/Urbanist-Regular.ttf");
+}
+
+:root {
+    --color1: #daf3ea;
+    --color2: #72d9bb;
+    --color3: #35c594;
+    --color4: #142c4c;
+    --color5: #0d0f36;
+    --padding-1: 30px;
+    --padding-2: 60px;
+    --padding-3: 180px;
+}
+
+/* Login */
+
+.container-login {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    padding-top: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(var(--color1), white);
+}
+
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(15px);
+    }
+    100% {
+        transform: translateY(-15px);
+    }
+}
+
+#img_login {
+    max-width: 200px;
+    animation: moveUpDown 4s infinite alternate;
+    margin-bottom: 30px;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 500px; /* Limitando a largura do formulário */
+}
+
+.login h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.login p {
+    margin-bottom: 10px;
+    font-size: clamp(14px, 2vh, 30px);
+}
+.login a {
+    
+    font-size: clamp(14px, 2vh, 30px);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+form p {
+    width: 100%;
+}
+
+form p input {
+    border: none;
+    padding: 10px;
+    font-size: clamp(14px, 2vh, 30px);
+    width: 100%;
+    background-color: var(--color1);
+    border-radius: 8px;
+    border: 1px solid var(--color3);
+    transition: 0.5s;
+}
+
+form p input::placeholder {
+    font-size: 16px;
+    font-weight: 700;
+    opacity: 80%;
+}
+
+#button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+.login div{
+    width: 30vw;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login button{
+    width: 200px;
+    font-size: 18px;
+    background: var(--color2);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 1px solid var(--color3);
+    padding: 10px;
+    margin-bottom: 3vh;
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    gap: 5%;
+}
+.login button i{
+    font-size: clamp(18px, 3vh, 90px);
+}
+
+input[type="submit"] {
+    width: 200px;
+    font-size: 18px;
+    background: var(--color2);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--color3);
+}
+
+.login-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.login-links a {
+    color: var(--color4);
+    text-decoration: underline;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.login-links a:hover {
+    color: var(--color2);
+}
+
+@media screen and (max-width: 768px) {
+    .login {
+        width: 90%;
+    }
+}

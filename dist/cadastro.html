@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamp - Cadastro</title>
+    <link href="https://unpkg.com/cropperjs/dist/cropper.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/cropperjs/dist/cropper.min.js"></script>
+    <link rel="stylesheet" href="stylecadastro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="assets/newLampSF05.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div id="header">
+        <script src="import.nav.js"></script>
+        <script type="module" src="../database/nav.js"></script>
+    </div>
+
+    <div class="container-cadastro">
+        <div class="info-cadastro">
+            <h1>O primeiro passo para uma aventura.</h1>
+            <p>O primeiro passo para desbloquear um mundo de oportunidades educacionais e crescimento pessoal.</p>
+            <p>Ao fazê-lo, você se torna parte de uma comunidade dedicada ao conhecimento, onde o aprendizado é
+                flexível, acessível e adaptado às suas necessidades.</p>
+        </div>
+
+        <div class="cadastro">
+            <div class="texto-cadastro">
+                <h2>Cadastre-se Gratuitamente</h2>
+                <p>Campos marcados com * são obrigatórios</p>
+            </div>
+            <form id="cadastroForm" method="post" enctype="multipart/form-data">
+                <input type="text" name="apelido" id="apelido" placeholder="Apelido *">
+                <input type="text" name="nome" id="nome" placeholder="Nome *">
+                <input type="text" name="email" id="email" placeholder="Email *">
+                <input type="text" name="tel" id="tel" placeholder="Telefone">
+                <input type="text" placeholder="Data de Nascimento" onfocus="this.type='date'"
+                    onblur="if (!this.value) this.type='text'" name="nasc" id="nasc">
+
+                <div class="foto">
+                    <p>Foto: </p>
+                    <p id="idfoto"><label for="foto">Escolher Foto</label><input type="file" name="foto" id="foto"
+                            accept="image/*"></p>
+                </div>
+
+                <div class="cortar-imagem">
+                    <div class="img-container">
+                        <img id="image" src="" alt="Picture">
+                    </div>
+                    <button type="button" id="cropButton">Recortar</button>
+                </div>
+                <input type="password" name="senha" id="senha" placeholder="Senha *">
+                <div class="termos-priv">
+                    <p>Ao clicar no botão abaixo, indicará que leu e concorda com os Termos de Serviço e os Termos de
+                        Privacidade.</p>
+                    <p>Já possui uma conta? faça login<a href="login.html">aqui</a></p>
+                </div>
+                <p id="button"><input type="submit" value="Enviar" id="bt_cad"></p>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="../database/cadastro.js"></script>
+
+</body>
+
+</html>
