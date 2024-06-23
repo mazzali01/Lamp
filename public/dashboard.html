@@ -1,0 +1,79 @@
+    <!DOCTYPE html>
+    <html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lamp - Dashboard</title>
+        <link rel="stylesheet" href="styledashboard.css">
+        <link rel="shortcut icon" type="image/png" href="assets/newLampSF05.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+
+    <body>
+        <!-- Tela de Carregamento -->
+        <div class="loadingScreen">
+            <script type="module" src="importLoading.js"></script>
+        </div>
+
+        <div id="header">
+            <script src="import.nav.js"></script>
+            <script type="module" src="../database/nav.js"></script>
+        </div>
+
+        <div class="content">
+            <div class="topics">
+                <div id="newTask" class="topic">
+                    <h1 id="welcome">Bem vindo de volta ao Lamp,      </h1>
+                    <p>Está pronto para retomar seus estudos matemáticos?</p>
+                    <div id="button">
+                        <a href="courses.html">Iniciar atividade</a>
+                    </div>
+                </div>
+
+                <div id="taskDone" class="topic">
+                    <div>
+                        <p>Atividades concluídas:</p>
+                        <p id="numTasks"></p>
+                    </div>
+                    <div>
+                        <p>Lumens:</p>
+                        <p id="numLumens"></p>
+                    </div>
+                </div>
+
+                <div id="media" class="topic">
+                    <h1>Desempenho geral</h1>
+                    <div class="canvas-box" id='donut-canvas'>
+                        <canvas id="hits" width="300" height="150"></canvas>
+                    </div>
+                </div>
+
+                <div id="mediaSubjects" class="topic">
+                    <h1>Progresso semanal</h1>
+                    <div class="canvas-box">
+                        <canvas id="advances" width="400" height="80"></canvas>
+                    </div>
+                </div>
+
+                <div id="development" class="topic">
+                    <h1>Melhores tópicos</h1>
+                    <div class="canvas-box" id="canvas-3">
+                        <canvas id="qnt-topic" width="400" height="100"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="module" src="../database/dashboard.js"></script>
+        <script type="module" src="../database/results.js"></script>
+        <script type="module" src="../database/seg.js"></script>
+    </body>
+
+    </html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamp - Cadastro de Quiz</title>
+    <link rel="stylesheet" href="styleCadQuiz.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="assets/newLampSF05.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+    <div id="header">
+        <script src="import.nav.js"></script>
+        <script type="module" src="../database/nav.js"></script>
+    </div>
+    
+    <div class="container-geral">
+        <div class="card">
+
+            <form method="post">
+    
+                <p><input type="text" name="fonte" id="fonte" placeholder="Fonte da Questão"></p>
+                <p><input type="text" name="enunciado" id="enunciado" placeholder="Enunciado da Questão"></p>
+                <p><input type="text" name="comando" id="comando" placeholder="Comando da Questão"></p>
+                <p><input type="text" name="explicacao" id="exp" placeholder="Explicação da resposta"></p>
+
+                <!-- <p id="idfoto"><label id="label-file" for="foto">Escolher Foto</label><input type="file" name="foto" id="foto"  accept="image/*" ></p> -->
+                <p><input type="text" class="alt" id="alt1" placeholder="Alternativa A"></p>
+                <p><input type="text" class="alt" id="alt2" placeholder="Alternativa B"></p>
+                <p><input type="text" class="alt" id="alt3" placeholder="Alternativa C"></p>
+                <p><input type="text" class="alt" id="alt4" placeholder="Alternativa D"></p>
+                <p><input type="text" class="alt" id="alt5" placeholder="Alternativa E"></p>
+                <p><input type="text" list="topic" placeholder="Selecione o Tópico" id="listTopic"></p>
+                <datalist id="topic">
+                    <option value="add">Adição</option>
+                    <option value="sub">Subtração</option>
+                    <option value="mult">Multiplicação</option>
+                    <option value="div">Divisão</option>
+                    <option value="pot">Potenciação</option>
+                    <option value="raiz">Raiz quadrada</option>
+                    <option value="porc">Porcentagem</option>
+                    <option value="frac">Frações</option>
+                    <option value="cart">Plano Cartesiano</option>
+                    
+                </datalist>
+    
+    
+                <p><input type="text" list="diff" placeholder="Selecione a Dificuldade" id="listDiff"></p>
+                <datalist id="diff">
+                    <option value="Facil"></option>
+                    <option value="Medio"></option>
+                    <option value="Dificil"></option>
+                </datalist>
+    
+                <p><input type="text" list="correct" id="resp" placeholder="Opção Correta"></p>
+                <datalist id="correct">
+                    <option value="a"></option>
+                    <option value="b"></option>
+                    <option value="c"></option>
+                    <option value="d"></option>
+                    <option value="e"></option>
+                </datalist>
+    
+                <p id="button"><input type="submit" value="Submit" id="submit"></p>
+            </form>
+        </div>
+
+    </div>
+
+    <script type="module" src="../database/cadQuiz.js"></script>
+    
+</body>
+</html>

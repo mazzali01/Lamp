@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamp - Perfil do Usuário</title>
+    <link rel="stylesheet" href="styleprofile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="assets/newLampSF05.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Tela de Carregamento -->
+    <div class="loadingScreen">
+        <script type="module" src="importLoading.js"></script>
+    </div>
+
+    <!-- Cabeçalho -->
+    <div id="header">
+        <script src="import.nav.js"></script>
+        <script type="module" src="../database/nav.js"></script>
+    </div>
+
+    <div id="containerProfile">
+        <div id="profileCard">
+            <div id="cardLeft">
+                <img src="" alt="" id="pfp">
+                <div>
+                    <h2 id="apLeft"></h2>
+                    <p id="emailLeft"></p>
+                    <p id="tempo"></p>
+                </div>
+            </div>
+
+            <div id="cardRight">
+                <div id="infoProfile">
+                    <div class="profileLine">
+                        <div class="profileLineLeft">
+                            <p>Nome</p>
+                        </div>
+                        <div class="profileLineRight">
+                            <input id="nome"></input>
+                        </div>
+                    </div>
+                    <div class="profileLine">
+                        <div class="profileLineLeft">
+                            <p>Apelido</p>
+                        </div>
+                        <div class="profileLineRight">
+                            <input id="apelido"></input>
+                        </div>
+                    </div>
+                    <div class="profileLine">
+                        <div class="profileLineLeft">
+                            <p>Email</p>
+                        </div>
+                        <div class="profileLineRight">
+                            <input id="email"></input>
+                        </div>
+                    </div>
+                    <div class="profileLine">
+                        <div class="profileLineLeft">
+                            <p>Telefone</p>
+                        </div>
+                        <div class="profileLineRight">
+                            <input id="telefone"></input>
+                        </div>
+                    </div>
+                    <div class="profileLine">
+                        <div class="profileLineLeft">
+                            <p>Nascimento</p>
+                        </div>
+                        <div class="profileLineRight">
+                            <input id="nasc"></input>
+                        </div>
+                    </div>
+                </div>
+                <div id="buttonsProfile">
+                    <div class="button" id="edit"><a href="">Editar</a>
+                    </div>
+                    <div class="button" id="altSenha"><a href="">alterar Senha</a></div>
+                    <div class="button" id="excluir"><a href="">Excluir perfil</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../database/inputFocus.js"></script>
+    <script type="module" src="../database/seg.js"></script>
+    <script type="module" src="../database/atualizarDados.js"></script>
+    <script type="module" src="../database/excluir.js"></script>
+</body>
+
+</html>

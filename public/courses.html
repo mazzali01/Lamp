@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamp - Escolha de Tópico</title>
+    <link rel="stylesheet" href="stylecourses.css">
+    <link rel="shortcut icon" type="image/png" href="assets/newLampSF05.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <script src="import.nav.js"></script>
+        <script type="module" src="../database/nav.js"></script>
+    </div>
+    <div class="content">
+        <div class="subjects">
+            <div class="subject" id="add">
+                <h1>+</h1>
+                <p>Adição</p>
+                <p id="complete">85%</p>
+            </div>
+            <div class="subject" id="sub">
+                <h1>-</h1>
+                <p>Subtração</p>
+                <p id="complete">67%</p>
+            </div>
+            <div class="subject" id="mult">
+                <h1>×</h1>
+                <p>Multiplicação</p>
+                <p id="complete">32%</p>
+            </div>
+            <div class="subject" id="div">
+                <h1>÷</h1>
+                <p>Divisão</p>
+                <p id="complete">95%</p>
+            </div>
+            <div class="subject" id="pot">
+                <h1>2²</h1>
+                <p>Potenciação</p>
+                <p id="complete">16%</p>
+            </div>
+            <div class="subject" id="raiz">
+                <h1>√</h1>
+                <p>Raiz quadrada</p>
+                <p id="complete">24%</p>
+            </div>
+            <div class="subject" id="porc">
+                <h1>%</h1>
+                <p>Porcentagem</p>
+                <p id="complete">19%</p>
+            </div>
+            <div class="subject" id="frac">
+                <h1>½</h1>
+                <p>Operações com fração</p>
+                <p id="complete">74%</p>
+            </div>
+            <div class="subject" id="cart">
+                <h1>📈</h1>
+                <p>Plano cartesiano</p>
+                <p id="complete">34%</p>
+            </div>
+        </div>
+    <!-- dificuldade -->
+    <div class="diff-box">
+        <div class="fundo"></div>
+        <div class="diff-card">
+
+            <div class="exit">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            
+            <h1>Escolha a dificuldade</h1>
+            <div class="options">
+                <input type="radio" name="diff-f" id="diff-f" value="Facil" style="display: none;">
+                <label for="diff-f" id="diff-label">1</label>
+
+                <input type="radio" name="diff-m" id="diff-m" value="Medio" style="display: none;">
+                <label for="diff-m" id="diff-label">2</label>
+
+                <input type="radio" name="diff-d" id="diff-d" value="Dificil" style="display: none;">
+                <label for="diff-d" id="diff-label">3</label>
+
+
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+    <script type="module" src="../database/SelectDiff.js"></script>
+
+</body>
+
+</html>
