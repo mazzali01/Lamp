@@ -1,0 +1,108 @@
+{
+    "questions": {
+        "mult": {
+            "Dificil": {
+                "1": {
+                    "alternativas": ["60.000", "72.000", "84.000", "96.000", "108.000"],
+                    "comando": "Escolha a resposta correta",
+                    "dificuldade": "Dificil",
+                    "enunciado": "Uma fábrica produz 200 peças por hora e opera 24 horas por dia. Quantas peças ela produz em 10 dias?",
+                    "explicacao": "Para calcular o número total de peças produzidas em 10 dias, primeiro multiplicamos a produção por hora pela quantidade de horas em um dia (24 horas), e depois multiplicamos pelo número de dias (10). Assim, 200 peças/hora * 24 horas/dia * 10 dias = 48.000 peças.",
+                    "fonte": "Matemática do Trabalho",
+                    "resposta": "d",
+                    "topico": "mult"
+                },
+                "2": {
+                    "alternativas": ["1.500.000", "1.600.000", "1.700.000", "1.800.000", "1.900.000"],
+                    "comando": "Escolha a resposta correta",
+                    "dificuldade": "Dificil",
+                    "enunciado": "Um supermercado vende 5.000 unidades de um produto por semana. Quantas unidades desse produto ele vende em um ano (considerando 52 semanas)?",
+                    "explicacao": "Para determinar o total de unidades vendidas em um ano, multiplicamos a quantidade vendida por semana pelo número de semanas em um ano. Assim, 5.000 unidades/semana * 52 semanas = 260.000 unidades.",
+                    "fonte": "Matemática Comercial",
+                    "resposta": "b",
+                    "topico": "mult"
+                },
+                "3": {
+                    "alternativas": ["540.000", "560.000", "580.000", "600.000", "620.000"],
+                    "comando": "Escolha a resposta correta",
+                    "dificuldade": "Dificil",
+                    "enunciado": "Uma companhia aérea opera 6 voos diários, cada um com capacidade para 150 passageiros. Quantos passageiros a companhia transporta em um mês (considerando 30 dias)?",
+                    "explicacao": "Para calcular o total de passageiros transportados em um mês, multiplicamos o número de voos diários pela capacidade de passageiros por voo e pelo número de dias no mês. Assim, 6 voos/dia * 150 passageiros/voo * 30 dias = 27.000 passageiros.",
+                    "fonte": "Matemática Logística",
+                    "resposta": "d",
+                    "topico": "mult"
+                },
+                "4": {
+                    "alternativas": ["600.000", "720.000", "840.000", "960.000", "1.080.000"],
+                    "comando": "Escolha a resposta correta",
+                    "dificuldade": "Dificil",
+                    "enunciado": "Um depósito tem 300 prateleiras, cada uma com 200 caixas. Quantas caixas há no total no depósito?",
+                    "explicacao": "Para determinar o número total de caixas no depósito, multiplicamos o número de prateleiras pelo número de caixas por prateleira. Assim, 300 prateleiras * 200 caixas/prateleira = 60.000 caixas.",
+                    "fonte": "Matemática Logística",
+                    "resposta": "b",
+                    "topico": "mult"
+                },
+                "5": {
+                    "alternativas": ["2.400.000", "2.600.000", "2.800.000", "3.000.000", "3.200.000"],
+                    "comando": "Escolha a resposta correta",
+                    "dificuldade": "Dificil",
+                    "enunciado": "Um grande evento distribuiu 5.000 brindes por dia, durante 12 dias. Quantos brindes foram distribuídos ao todo?",
+                    "explicacao": "Para calcular o número total de brindes distribuídos, multiplicamos o número de brindes por dia pelo número de dias de distribuição. Assim, 5.000 brindes/dia * 12 dias = 60.000 brindes.",
+                    "fonte": "Eventos e Promoções",
+                    "resposta": "d",
+                    "topico": "mult"
+                },
+                "6": {
+                    "alternativas": ["36.000", "42.000", "48.000", "54.000", "60.000"],
+                    "comando": "Escolha a resposta correta",
+                    "dificuldade": "Dificil",
+                    "enunciado": "Uma biblioteca possui 30 estantes, cada uma com 40 livros. Quantos livros há na biblioteca?",
+                    "explicacao": "Para determinar o número total de livros na biblioteca, multiplicamos o número de estantes pelo número de livros por estante. Assim, 30 estantes * 40 livros/estante = 1.200 livros.",
+                    "fonte": "Matemática Educacional",
+                    "resposta": "e",
+                    "topico": "mult"
+                },
+                "7": {
+                    "alternativas": ["8.640", "9.360", "10.080", "10.800", "11.520"],
+                    "comando": "Escolha a resposta correta",
+                    "dificuldade": "Dificil",
+                    "enunciado": "Uma empresa de transporte realiza 8 viagens diárias, cada uma com 60 passageiros. Quantos passageiros ela transporta em um mês (considerando 30 dias)?",
+                    "explicacao": "Para calcular o total de passageiros transportados em um mês, multiplicamos o número de viagens diárias pela capacidade de passageiros por viagem e pelo número de dias no mês. Assim, 8 viagens/dia * 60 passageiros/viagem * 30 dias = 14.400 passageiros.",
+                    "fonte": "Matemática Logística",
+                    "resposta": "d",
+                    "topico": "mult"
+                },
+                "8": {
+                    "alternativas": ["8.000", "9.000", "10.000", "11.000", "12.000"],
+                    "comando": "Escolha a resposta correta",
+                    "dificuldade": "Dificil",
+                    "enunciado": "Um armazém possui 10 corredores, cada um com 800 prateleiras. Quantas prateleiras há no total no armazém?",
+                    "explicacao": "Para determinar o número total de prateleiras no armazém, multiplicamos o número de corredores pelo número de prateleiras por corredor. Assim, 10 corredores * 800 prateleiras/corredor = 8.000 prateleiras.",
+                    "fonte": "Matemática Logística",
+                    "resposta": "c",
+                    "topico": "mult"
+                },
+                "9": {
+                    "alternativas": ["1.800.000", "1.900.000", "2.000.000", "2.100.000", "2.200.000"],
+                    "comando": "Escolha a resposta correta",
+                    "dificuldade": "Dificil",
+                    "enunciado": "Um hospital realiza 100 cirurgias por semana. Quantas cirurgias ele realiza em um ano (considerando 50 semanas)?",
+                    "explicacao": "Para calcular o número total de cirurgias em um ano, multiplicamos o número de cirurgias por semana pelo número de semanas em um ano. Assim, 100 cirurgias/semana * 50 semanas = 5.000 cirurgias.",
+                    "fonte": "Matemática da Saúde",
+                    "resposta": "b",
+                    "topico": "mult"
+                },
+                "10": {
+                    "alternativas": ["108.000", "120.000", "132.000", "144.000", "156.000"],
+                    "comando": "Escolha a resposta correta",
+                    "dificuldade": "Dificil",
+                    "enunciado": "Uma empresa de tecnologia produz 1.000 dispositivos por semana. Quantos dispositivos ela produz em 9 meses (considerando 4 semanas por mês)?",
+                    "explicacao": "Para calcular o número total de dispositivos produzidos em 9 meses, multiplicamos 1000 depositivos pelo numero de semanas em 9 meses. Assim, 144.000",
+                    "fonte": "Matemática do Trabalho",
+                    "resposta": "d",
+                    "topico": "mult"
+                }
+            }
+        }
+    }
+}
