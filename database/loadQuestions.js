@@ -1,8 +1,8 @@
 import { getDatabase, ref, onValue } from "firebase/database";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { reset, getDados } from './database/utils.js';
-import { checkPreviousAnswer } from './database/checkAnswers.js';
-import { mostrarResultado } from './database/showResults.js';
+import { reset, getDados } from './utils.js';
+import { checkPreviousAnswer } from './checkAnswers.js';
+import { mostrarResultado } from './showResults.js';
 import { getLastQuestion } from "./getLastQuestion.js";
 
 const bd = getDatabase();
