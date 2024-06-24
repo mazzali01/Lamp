@@ -32,12 +32,6 @@ const qntTopic = document.getElementById('qnt-topic');
 var qntTopicCtx = qntTopic.getContext('2d');
 
 
-var add = 35;
-var sub = 30;
-var mult = 20;
-var div = 15;
-
-
 auth.onAuthStateChanged(user => {
     welcome.innerHTML = `Bem vindo de volta ao Lamp, ${user.displayName}!`;
     getResults(user).then(results => {

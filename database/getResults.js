@@ -38,16 +38,20 @@ export async function getTotalGeral(uid){
     return totalGeral
 }
 
-export async function getLumens(uid){
+export function getLumens(uid) {
     const refBase = ref(bd, `user/${uid}`);
-    var exp = 0;
-    await onValue(refBase, (snapshot) =>{
-        const data = snapshot.val();
-        if(data && data.Lumens){
-            exp = data.Lumens;
-        }
+    return new Promise((resolve, reject) => {
+        onValue(refBase, (snapshot) => {
+            const data = snapshot.val();
+            if (data && data.Lumens) {
+                resolve(data.Lumens);
+            } else {
+                resolve(0); // Ou o valor padrão desejado
+            }
+        }, (error) => {
+            reject(error);
+        });
     });
-    return exp;
 }
 
 export async function getAcertos(uid){
