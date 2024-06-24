@@ -1,0 +1,132 @@
+/* Reset de estilos */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "moderna";
+}
+
+/* Estilos para tags de âncora */
+a {
+    text-decoration: none;
+}
+
+/* Importação de fonte */
+@font-face {
+    font-family: "moderna";
+    src: url("assets/Urbanist-Regular.ttf");
+}
+
+/* Variáveis raiz */
+:root {
+    --color1: #daf3ea;
+    --color2: #72d9bb;
+    --color3: #35c594;
+    --color4: #142c4c;
+    --color5: #0d0f36;
+    --padding-1: 30px;
+    --padding-2: 60px;
+    --padding-3: 180px;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+}
+.container-geral{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding-top: 7vh;
+    background: linear-gradient(var(--color1), white);
+}
+
+.card{
+    height: 95%;
+    width: 40%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid var(--color3) 1px;
+    border-radius: 30px;
+}
+
+form{
+    width: 80%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+form p{
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    text-align: baseline;
+    width: 60%;
+    height: fit-content;
+}
+
+input:is([type='text']){
+    border: none;
+    padding: 10px;
+    width: 100%;
+    background-color: var(--color1);
+    border-radius: 8px;
+    font-size: 16px;
+    border: 1px solid var(--color3);
+    transition: 0.5s;
+}
+input::placeholder {
+    font-size: 16px;
+    font-weight: 600;
+    opacity: 80%;
+}
+
+#foto{
+    display: none;
+}
+#label-file{
+    border: none;
+    padding: 7px;
+    width: 80%;
+    background-color: var(--color2);
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    opacity: 80%;
+}
+
+#label-file:hover{
+    cursor: pointer;
+}
+
+#button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input:is([type="submit"]) {
+    width: 50%;
+    padding: 3%;
+    margin-top: 2%;
+    font-size: 18px;
+    background: var(--color2);
+    border-radius: 8px;
+    color: white;
+    border: solid 1px var(--color3);
+}
+
+input:is([type="submit"]):hover {
+    cursor: pointer;
+    background-color: var(--color3);
+}

@@ -1,0 +1,309 @@
+/* Reset de estilos */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "moderna";
+}
+
+/* Estilos para tags de âncora */
+a {
+    text-decoration: none;
+}
+
+/* Importação de fonte */
+@font-face {
+    font-family: "moderna";
+    src: url("assets/Urbanist-Regular.ttf");
+}
+
+/* Variáveis raiz */
+:root {
+    --color1: #daf3ea;
+    --color2: #72d9bb;
+    --color3: #35c594;
+    --color4: #142c4c;
+    --color5: #0d0f36;
+    --padding-1: 30px;
+    --padding-2: 60px;
+    --padding-3: 180px;
+}
+
+/* Estilo para o conteúdo */
+.content {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 7vh;
+}
+
+/* Estilo para a seção de tarefas novas */
+#newTask {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid var(--color2);
+    border-radius: 8px;
+    background-color: var(--color1);
+    padding: var(--padding-1);
+    transition: 0.5s;
+    width: 60%;
+    height: auto;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#newTask h1 {
+    font-size: clamp(20px, 3vh, 50px);
+}
+
+#newTask p {
+    font-size: clamp(15px, 2vh, 30px);
+}
+
+#button {
+    padding: 0.2% 2%;
+    border-radius: 8px;
+    background-color: var(--color2);
+    border: solid 1px var(--color3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    margin: 0.8% ;
+}
+
+#button a {
+    color: white;
+    text-align: center;
+    font-weight: 550;
+    font-size: 20px;
+}
+
+#button:hover {
+    background-color: var(--color3);
+    cursor: pointer;
+}
+
+/* Estilo para a seção de tarefas concluídas */
+#taskDone {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 1px solid var(--color2);
+    border-radius: 8px;
+    background-color: var(--color1);
+    padding: var(--padding-1);
+    transition: 0.5s;
+    width: 30%;
+    height: auto;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#taskDone div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#numTasks,
+#numLumens {
+    font-size: clamp(30px, 6.5vh, 65px);
+}
+
+/* Estilo para gráficos */
+#media,
+#mediaSubjects,
+#development {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 1px solid var(--color2);
+    border-radius: 8px;
+    background-color: var(--color1);
+    padding: var(--padding-1);
+    transition: 0.5s;
+    margin-bottom: 20px;
+}
+
+#media {
+    width: 30%;
+    height: 30vh;
+}
+
+#mediaSubjects {
+    width: 60%;
+    height: 30vh;
+}
+
+#development {
+    width: 92%;
+    height: 40vh;
+}
+
+.topics {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2%;
+    align-content: center;
+    margin: 3vh 0;
+}
+
+.topic {
+    border: solid 1px var(--color2);
+    border-radius: 8px;
+    background-color: var(--color1);
+    transition: 0.5s;
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: auto;
+}
+
+.canvas-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#donut-canvas {
+    height: 70%;
+}
+
+#canvas-3 {
+    height: 90%;
+    width: 90%;
+}
+
+canvas {
+    transition: 0.5s;
+    height: 100%;
+    width: 100%;
+}
+
+/* Responsividade */
+@media screen and (max-width: 1024px) {
+    .content {
+        padding-top: 7vh;
+    }
+
+    .topics {
+        width: 100%;
+        gap: 5%;
+        padding-top: 15vh;
+    }
+
+    .topic {
+        margin: 0;
+    }
+
+    #taskDone {
+        width: 30%;
+        height: 20%;
+        margin: 0;
+    }
+
+    #media {
+        width: 60%;
+        height: 20%;
+    }
+
+    #newTask {
+        height: 15%;
+    }
+
+    #newTask,
+    #mediaSubjects,
+    #development {
+        width: 95%;
+    }
+
+    #button {
+        width: 40%;
+    }
+
+
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        padding-top: 14vh;
+    }
+
+    .topics {
+        gap: 3%;
+        width: 90%;
+    }
+
+    #newTask,
+    #taskDone,
+    #media,
+    #mediaSubjects,
+    #development {
+        width: 100%;
+    }
+
+    .canvas-box {
+        width: 100%;
+        height: 25vh;
+    }
+
+
+}
+
+@media screen and (max-width: 480px) {
+    .content {
+        height: 140vh;
+        padding-top: 15vh;
+    }
+
+    .topics {
+        width: 90%;
+        margin: 3vh 0;
+        gap: 3%;
+    }
+
+
+    #newTask,
+    #taskDone,
+    #media,
+    #mediaSubjects,
+    #development {
+        width: 100%;
+        margin: 0;
+    }
+
+    .canvas-box {
+        width: 100%;
+        height: 95%;
+    }
+
+
+    #newTask {
+        height: 30%;
+        margin: 0;
+    }
+
+    #taskDone,
+    #media {
+        height: 20%;
+    }
+
+    #mediaSubjects,
+    #development {
+        height: 35%;
+    }
+}

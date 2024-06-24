@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamp - Quiz</title>
+    <link rel="stylesheet" href="stylequizz.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="assets/newLampSF05.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- Tela de Carregamento -->
+    <div class="loadingScreen">
+        <script type="module" src="importLoading.js"></script>
+    </div>
+
+    <div class="voltar">
+        <a  id="back-arrow"><i class="fa-solid fa-arrow-left"></i></a>
+    </div>
+
+    <div id="containerquizz">
+        <div id="pergunta">
+            <p id="fonte"></p>
+            <p id="enunciado"></p>
+            <p id="comando"></p>
+        </div>
+
+        <div id="quizopc">
+            <div class="resposta">
+                <h3>A</h3>
+                <input type="radio" name="option" id="primeiro" value="a" required hidden>
+                <label for="primeiro" class="label-resp"></label>
+            </div>
+            <div class="resposta">
+                <h3>B</h3>
+                <input type="radio" name="option" id="segundo" value="b" required hidden>
+                <label for="segundo" class="label-resp"></label>
+            </div>
+            <div class="resposta">
+                <h3>C</h3>
+                <input type="radio" name="option" id="terceiro" value="c" required hidden>
+                <label for="terceiro" class="label-resp"></label>
+            </div>
+            <div class="resposta">
+                <h3>D</h3>
+                <input type="radio" name="option" id="quarto" value="d" required hidden>
+                <label for="quarto" class="label-resp"></label>
+            </div>
+            <div class="resposta">
+                <h3>E</h3>
+                <input type="radio" name="option" id="quinto" value="e" required hidden>
+                <label for="quinto" class="label-resp"></label>
+            </div>
+
+        </div>
+
+        <div class="resultado">
+
+            <p id="verifica-result"></p>
+
+            <p id="explica-result"></p>
+        </div>
+
+        <div class="buttons">
+            <input type="button" value="verificar" id="verifica">
+            <input type="button" value="Proxima" id="nextQuestion">
+            <input type="button" value="Enviar" id="submit">
+
+        </div>
+
+    </div>
+
+    <script type="module" src="../database/questions.js"></script>
+    <script type="module" src="../database/seg.js"></script>
+</body>
+
+</html>

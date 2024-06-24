@@ -1,0 +1,249 @@
+/* Reset de estilos */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "moderna";
+}
+
+/* Estilos para tags de âncora */
+a {
+    text-decoration: none;
+}
+
+/* Importação de fonte */
+@font-face {
+    font-family: "moderna";
+    src: url("assets/Urbanist-Regular.ttf");
+}
+
+/* Variáveis raiz */
+:root {
+    --color1: #daf3ea;
+    --color2: #72d9bb;
+    --color3: #35c594;
+    --color4: #142c4c;
+    --color5: #0d0f36;
+    --padding-1: 30px;
+    --padding-2: 60px;
+    --padding-3: 180px;
+}
+
+/* Estilo para o conteúdo */
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    padding-top: 7vh;
+}
+
+/* Estilo para a lista de tópicos */
+.subjects {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5%;
+}
+
+/* Estilo para cada tópico */
+.subject {
+    width: 200px;
+    height: 15vh;
+    border: solid 1px var(--color1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+    text-align: center;
+}
+
+.subject h1 {
+    font-size: clamp(25px, 5vh, 60px);
+}
+.subject p{
+    font-size: clamp(14px, 2vh, 60px)
+}
+
+.subject:hover {
+    transform: translateY(-15px);
+    background-color: var(--color1);
+    cursor: pointer;
+}
+
+/* diff */
+.diff-box {
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    display: none;
+
+}
+
+.fundo {
+    height: 100%;
+    width: 100%;
+    background-color: #0d0f36;
+    opacity: 30%;
+    position: absolute;
+
+}
+
+.diff-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height: 30%;
+    width: 30%;
+    background-color: white;
+    z-index: 2;
+    border-radius: 20px;
+}
+
+.exit {
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    top: 5%;
+    left: calc(95% - 10px);
+    font-size: 20px;
+    color: #142c4c;
+}
+
+.exit:hover {
+    cursor: pointer;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    height: 50%;
+}
+
+#diff-label {
+    width: 20%;
+    height: 40%;
+    margin: 2% 3%;
+    border: solid 2px var(--color1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+#diff-label:hover {
+    transform: translateY(-15px);
+    background-color: var(--color1);
+    cursor: pointer;
+}
+
+/* Responsividade */
+@media screen and (max-width: 1024px) {
+    .subjects {
+        width: 90%;
+        gap: 3%;
+    }
+
+    .subject {
+        width: 180px;
+        height: 15vh;
+    }
+
+    .diff-card {
+        height: 20%;
+        width: 40%;
+    }
+    .options {
+        margin-top: 5%;
+        height: 30%;
+    }
+    #diff-label{
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .subjects {
+        width: 95%;
+        gap: 2%;
+    }
+
+    .subject {
+        width: 160px;
+        height: 15vh;
+    }
+
+    .diff-card {
+        height: 20%;
+        width: 50%;
+        align-items: center;
+    }
+    .diff-card h1{
+        text-align: center;
+    }
+
+    .options {
+        margin-top: 5%;
+        height: 30%;
+    }
+    #diff-label{
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .subjects {
+        width: 100%;
+        gap: 1%;
+    }
+
+    .subject {
+        width: 140px;
+        height: 15vh;
+    }
+
+    .diff-card {
+        height: 30%;
+        width: 60%;
+        align-items: center;
+    }
+    .diff-card h1{
+        font-size: clamp(14px, 2vh, 50px);
+    }
+
+    .options {
+        height: 65%;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    #diff-label {
+        width: 40%;
+        height: 30%;
+        margin: 2%;
+        font-size: 18px;
+    }
+}
