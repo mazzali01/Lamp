@@ -21,7 +21,7 @@
         </div>
 
     <div id="header">
-        <script src="import.nav.js"></script>
+        <script type="module" src="import.nav.js"></script>
         <script type="module" src="../database/nav.js"></script>
     </div>
 
@@ -51,8 +51,8 @@
 
     </div>
     <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-        import { getAuth, sendPasswordResetEmail, onAuthStateChanged}from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+        import { initializeApp } from "firebase/app";
+        import { getAuth, sendPasswordResetEmail, onAuthStateChanged}from "firebase/auth";
 
 
         // Your web app's Firebase configuration

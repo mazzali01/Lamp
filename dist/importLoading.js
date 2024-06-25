@@ -1,6 +1,6 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-import { getDatabase, ref } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
-import { getAuth, onAuthStateChanged}from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref } from "firebase/database";
+import { getAuth, onAuthStateChanged}from "firebase/auth";
 import getDados from "../database/getDados.js";
 
 // Your web app's Firebase configuration
