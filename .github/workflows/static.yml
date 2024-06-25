@@ -23,26 +23,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20.x'  # ou a versão do Node.js que você está usando
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build the project
-        run: npm run build
-
+          node-version: '22'
       - name: Setup Pages
         uses: actions/configure-pages@v5
-
+      - name: Build Project
+        run: npm install && npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'dist'  # Certifique-se de que este é o diretório correto para seu build
-
+          path: 'dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
