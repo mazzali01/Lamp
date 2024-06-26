@@ -39,9 +39,7 @@ jobs:
         run: ls -al ./dist
 
       - name: Check dist size
-        run: |
-          echo "Calculating size of dist directory..."
-          node -e "const fs = require('fs'); const path = require('path'); function getTotalSize(directoryPath) { let totalSize = 0; function recurse(directory) { fs.readdirSync(directory).forEach(file => { const filePath = path.join(directory, file); if (fs.lstatSync(filePath).isDirectory()) { recurse(filePath); } else { totalSize += fs.statSync(filePath).size; } }); } recurse(directoryPath); return totalSize; } console.log('Total size:', (getTotalSize('./dist') / (1024 * 1024)).toFixed(2), 'MB');"
+        run: du -sh ./dist
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
