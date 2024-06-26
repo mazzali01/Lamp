@@ -86,20 +86,23 @@ async function saveUserData(uid, currentQuestion, acertos, exp, firstQuestion) {
 
         const answerds = currentQuestion - firstQuestion;
 
-
-        await update(refResults, {
-            data: dataAtual.toISOString().split('T')[0],
-            lastQuestion: (currentQuestion - 1),
-            acertos: acertos,
-            questionsAnswerds: answerds 
-        });
+        if(answerds > 0){
+            await update(refResults, {
+                data: dataAtual.toISOString().split('T')[0],
+                lastQuestion: (currentQuestion - 1),
+                acertos: acertos,
+                questionsAnswerds: answerds 
+            });
+            
+            let dailyTotalRef = ref(bd,`userResults/${uid}/semana ${semanaAtual}/dia ${correctDiaAtual}`)
+            await update(dailyTotalRef, {
+                dailyTotal: totalDiario
+            })
+        }
 
         const totalDiario = await getTotal(refDias, correctDiaAtual);
 
-        let dailyTotalRef = ref(bd,`userResults/${uid}/semana ${semanaAtual}/dia ${correctDiaAtual}`)
-        await update(dailyTotalRef, {
-            dailyTotal: totalDiario
-        })
+
 
         const totalSemanal = await getWeeklyTotal(refSemanas, semanaAtual);
         const refWeeklyTotal = ref(bd, `userResults/${uid}/semana ${semanaAtual}/totalSemanal`);

@@ -7,7 +7,8 @@ export function mostrarResultado(acertos, quizLength) {
     const fonte = document.getElementById('fonte');
     const comando = document.getElementById('comando');
     const resultado  = document.querySelector('.resultado');
-    const respostas = document.querySelectorAll('.resposta')
+    const respostas = document.querySelectorAll('.resposta');
+    const trade = document.querySelector('.trade');
 
     const diffRef = localStorage.getItem('questionRef');
     const diff = localStorage.getItem('diff');
@@ -25,6 +26,7 @@ export function mostrarResultado(acertos, quizLength) {
     verifica.style.display = 'none';
     resultado.style.display = 'none';
     comando.style.display = "none";
+    trade.style.display = "none";
 
     respostas.forEach(resposta => {
         resposta.style.display = "none";

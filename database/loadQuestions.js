@@ -50,6 +50,10 @@ export async function loadQuestion(uid ,acertos, verifica, exp) {
                 currentQuestion = 1;
             }
             if (currentQuestion <= quizLength) {
+                labels.forEach(label => {
+                    label.style.display = 'flex'
+                })
+
                 const questionRef = ref(bd, `questions/${topic}/${diff}/${currentQuestion}`);
                 getDados(questionRef).then((dados) => {
                     const questionData = dados;

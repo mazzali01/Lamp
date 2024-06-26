@@ -9,6 +9,7 @@ import { mostrarResultado } from './showResults.js';
 import { getSelected } from "./utils.js";
 import { saveUserData } from "./setResults.js";
 import { atualizarAcertos } from "./getAcertos.js";
+import { remove2, markAsnwer } from "./trade.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBfJuEDQ7KIPO_feHPmtY4DXRPP-ZqpmVY",
@@ -92,5 +93,22 @@ auth.onAuthStateChanged(async function (user){
             await saveUserData(uid, currentQuestion, acertos, exp, firstQuestion);
             window.location = "courses.html";
         });
+
+        
+        //=============== TRADE ==================
+
+        
+        const rm2 = document.getElementById("rm2");
+        const markR = document.getElementById("markR");
+        
+        rm2.addEventListener('click', async () =>{
+            await remove2(uid, currentQuestion, exp);
+        })
+
+        markR.addEventListener('click', async () =>{
+            await markAsnwer(uid, currentQuestion, exp)
+        })
+
     }
+
 });

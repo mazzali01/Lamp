@@ -129,17 +129,12 @@ a {
 }
 
 
-/* voltar */
-.voltar {
-    position: absolute;
+.trade{
     display: flex;
-
-}
-
-.voltar a {
-    color: var(--color5);
-    font-size: 35px;
-    margin: 100% 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
 }
 
 .buttons {
@@ -172,6 +167,21 @@ input:is([type='button']):hover {
     cursor: pointer;
     scale: 105%;
 }
+
+
+/* voltar */
+.voltar {
+    position: absolute;
+    display: flex;
+
+}
+
+.voltar a {
+    color: var(--color5);
+    font-size: 35px;
+    margin: 100% 100%;
+}
+
 
 #back-arrow{
     transition: 0.3s;
