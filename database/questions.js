@@ -10,6 +10,7 @@ import { getSelected } from "./utils.js";
 import { saveUserData } from "./setResults.js";
 import { atualizarAcertos } from "./getAcertos.js";
 import { remove2, markAsnwer } from "./trade.js";
+import { getLumens } from "./getResults.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBfJuEDQ7KIPO_feHPmtY4DXRPP-ZqpmVY",
@@ -40,7 +41,11 @@ auth.onAuthStateChanged(async function (user){
     if (user) {
         const uid = user.uid;
         var acertos = await atualizarAcertos(uid);
-    
+
+        const lumens = await getLumens(uid)
+        const lumensElement = document.getElementById('lumens');
+        lumensElement.innerHTML = "Lumens: " + lumens;
+
         loadQuestion(uid, acertos, verifica, exp).then(({ questionData, quizLength: length, currentQuestion: questionAtual }) => {
             dados = questionData;
             quizLength = length;
@@ -105,7 +110,7 @@ auth.onAuthStateChanged(async function (user){
         })
 
         markR.addEventListener('click', async () =>{
-            await markAsnwer(uid, currentQuestion, exp)
+            await markAsnwer(uid, currentQuestion, exp);
         })
 
     }

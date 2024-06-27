@@ -51,6 +51,9 @@ export async function loadQuestion(uid ,acertos, verifica, exp) {
             }
             if (currentQuestion <= quizLength) {
                 trade.style.display  =  'flex';
+                document.getElementById('rm2').setAttribute('class', '');
+                document.getElementById('markR').setAttribute('class', '');
+
                 labels.forEach(label => {
                     label.style.display = 'flex'
                 })

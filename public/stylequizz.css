@@ -90,8 +90,9 @@ a {
     display: flex;
     position: absolute;
     background-color: var(--color1);
-    padding: 25px;
-    height: 90%;
+    padding: 3%;
+    height: 75%;
+    font-size: clamp(20px, 2vh, 40px);
     align-items: center;
     justify-content: center;
     left: 2%;
@@ -122,21 +123,22 @@ a {
 .resposta input:checked~.label-resp {
     border: 2px solid var(--color3);
     background-color: var(--color2);
-    color:white;
+    color: white;
     font-size: 18px;
     font-weight: 600;
     --color1: var(--color4);
 }
 
 
-.trade{
+.trade {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 50%;
 }
-.trade div{
+
+.trade div {
     padding: 1%;
 }
 
@@ -169,7 +171,7 @@ input:is([type='button']) {
 input:is([type='button']):hover {
     cursor: pointer;
     scale: 105%;
-    
+
 }
 
 
@@ -177,22 +179,38 @@ input:is([type='button']):hover {
 .voltar {
     position: absolute;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding: 2%;
 
 }
 
 .voltar a {
     color: var(--color5);
-    font-size: 35px;
-    margin: 100% 100%;
+    font-size: clamp(14px, 3.5vh, 40px);
+}
+
+.lumens-div {
+    border: solid 1px var(--color1);
+    background-color: white;
+    border-radius: 8px;
+    padding: 1%;
+}
+#lumens {
+    color: var(--color5);
+    font-size: clamp(14px, 2vh, 30px);
 }
 
 
-#back-arrow{
+#back-arrow {
     transition: 0.3s;
     color: var(--color4);
 }
 
-#back-arrow:hover{
+#back-arrow:hover {
     cursor: pointer;
     scale: 105%;
     color: var(--color5);
@@ -263,14 +281,16 @@ input:is([type='button']):hover {
 }
 
 @media screen and (max-width: 480px) {
-    #quizopc{
+    #quizopc {
         height: 40%;
     }
+
     .buttons {
         flex-direction: column;
         gap: 10px;
     }
-    .trade{
+
+    .trade {
         display: flex;
         flex-direction: column;
     }

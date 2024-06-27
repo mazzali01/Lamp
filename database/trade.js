@@ -19,6 +19,9 @@ const auth = getAuth();
 
 const inputs = document.querySelectorAll("input[type='radio']");
 const labels = document.querySelectorAll('.label-resp');
+        
+const rm2 = document.getElementById("rm2");
+const markR = document.getElementById("markR");
 
 const inputLabelMap = {};
 inputs.forEach(input => {
@@ -44,6 +47,7 @@ export async function remove2(uid, currentQuestion, exp) {
 
     if(lumens >= 500){
         lumens -= 500;
+        rm2.setAttribute('class', 'tradeV');
 
         await update(lumensRef, {Lumens: lumens})
 
@@ -61,6 +65,8 @@ export async function remove2(uid, currentQuestion, exp) {
     
         }
 
+    }else{
+        rm2.setAttribute('class', 'tradeF');
     }
 } 
 
@@ -81,6 +87,7 @@ export async function markAsnwer(uid, currentQuestion, exp){
 
     if(lumens >= 2000){
         lumens -= 2000;
+        markR.setAttribute('class', 'tradeV')
 
         await update(lumensRef, {Lumens: lumens})
 
@@ -98,6 +105,8 @@ export async function markAsnwer(uid, currentQuestion, exp){
         })
 
 
+    }else{
+        markR.setAttribute('class', 'tradeF')
     }
 
 
