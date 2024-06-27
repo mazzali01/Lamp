@@ -30,21 +30,21 @@ const button    = document.getElementById('edit');
 
 //quando o estado da autenticação for alterado, ex: login e logout
 auth.onAuthStateChanged((user) =>{
-
-    if(user.emailVerified){//se o email estiver verificado
-        console.log('O email do usuário ja foi verificado')
-    }else{// se o email nao estiver verificado
-        let resp = confirm('Seu email ainda não foi confirmado, podemos enviar um email de verificação para você?', 'sim', 'não');
-            
-        if(resp){// se o user aceitar enviaremos um email de verificação para ele
-            sendEmailVerification(user).then(() =>{
-                console.log('email de verificação enviado')
-            }).catch((error) =>{
-                console.log('erro ao enviar email de verificação: ' + error.message);
-            })
+    if(user){
+        if(user.emailVerified){//se o email estiver verificado
+            console.log('O email do usuário ja foi verificado')
+        }else{// se o email nao estiver verificado
+            let resp = confirm('Seu email ainda não foi confirmado, podemos enviar um email de verificação para você?', 'sim', 'não');
+                
+            if(resp){// se o user aceitar enviaremos um email de verificação para ele
+                sendEmailVerification(user).then(() =>{
+                    console.log('email de verificação enviado')
+                }).catch((error) =>{
+                    console.log('erro ao enviar email de verificação: ' + error.message);
+                })
+            }
         }
     }
-
 });
 
 button.addEventListener('click', (e) =>{

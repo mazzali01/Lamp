@@ -16,7 +16,7 @@ const submit = document.getElementById('submit');
 const verifica = document.getElementById('verifica');
 const fonte = document.getElementById('fonte');
 const comando = document.getElementById('comando');
-
+const trade     = document.querySelector('.trade');
 // Função para obter o comprimento do questionário
 const getLength = () => {
     return new Promise((resolve, reject) => {
@@ -50,6 +50,7 @@ export async function loadQuestion(uid ,acertos, verifica, exp) {
                 currentQuestion = 1;
             }
             if (currentQuestion <= quizLength) {
+                trade.style.display  =  'flex';
                 labels.forEach(label => {
                     label.style.display = 'flex'
                 })

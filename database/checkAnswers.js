@@ -51,9 +51,10 @@ function showResult( questionData, acertos, quizLength, currentQuestion, verific
     const result = document.querySelector('.resultado');
     const verResult = document.getElementById('verifica-result');
     const expResult = document.getElementById('explica-result');
+    const trade     = document.querySelector('.trade');
 
     result.style.display = 'flex';
-
+    trade.style.display  =  'none';
     if (answer === questionData.resposta) {
         verResult.innerText = "Parabéns, você acertou!";
         expResult.innerText = questionData.explicacao;

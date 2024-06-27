@@ -32,21 +32,26 @@ button.addEventListener("click", (e) =>{
             signInWithEmailAndPassword(auth, user.email, senha).then(() =>{//reliza um login para verificar a segurança da exclusão de conta
                 user.delete().then(() =>{//deleta user
                     const userRef = ref(bd, 'user/' + user.uid);
-                    
+                    const userResultsRef = ref(bd, `userResults/${user.uid}`)
                     set(userRef, null).then(() =>{//apaga dados do banco
                         console.log('dados excluidos com sucesso');
+                        set(userResultsRef, null).then( ()=> {
+                            console.log('resultados excluídos com sucesso')
+                        });
                     }).catch((error) =>{
                         console.log('erro ao excluir dados: ' + error.message);
+                        alert('não conseguimos excluir a sua conta, tente novamente mais tarde.')
                     });
-                    alert('usuário excluído com sucesso! Você será movido para a tela inicial.');
                     window.location = '../index.html';
 
                 }).catch((error) =>{
                     console.log('erro ao excluir usuário: ' + error.message);
+                    alert('erro ao excluir usuário, tente novamente mais tarde.');
                 });
 
             }).catch((error) =>{
                 console.log('erro ao excluir dados: ' + error.message);
+                alert('erro ao excluir dados, tente novamente mais tarde.')
             });
 
 

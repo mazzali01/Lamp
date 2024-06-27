@@ -131,7 +131,23 @@ btnCadastro.addEventListener('click', function(e) {
         logar(e);
     }).catch(error => {
         console.log("o seguinte erro foi evidenciado: " + error);
-        alert("erro ao criar o usuário: " + error);
+        switch(error.message){
+            case 'Firebase: Error (auth/invalid-email).':
+                alert('Insira um email válido.');
+                break;
+
+            case 'Firebase: Password should be at least 6 characters (auth/weak-password).':
+                alert('Escolha uma senha mais forte.');
+                break;
+
+            case 'Firebase: Error (auth/email-already-in-use).':
+                alert('Este email já está sendo utilizado.')
+                break;
+
+            default:
+                alert('Ops! Não conseguimos criar a sua conta, tente novamente.')
+        }
+
     });
 
 });
