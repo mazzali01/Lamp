@@ -64,7 +64,7 @@ async function calcPerc(questionLength, topicLength){
     var percentual = (questionLength/topicLength)*100;
     
     
-    if(isFinite(percentual)  || percentual <= 0 || isNaN(percentual)  ){
+    if(!isFinite(percentual)  || percentual <= 0 || isNaN(percentual)  ){
         percentual = 0;
     }
     
