@@ -63,7 +63,6 @@ auth.onAuthStateChanged(async function (user){
             currentQuestion++;
             if (currentQuestion <= quizLength) {
                 loadQuestion(uid ,acertos, verifica, exp).then(({ questionData }) => {
-                    
                     dados = questionData;
                     verifica.addEventListener('click', () => {
                         verificar(currentQuestion, quizLength, acertos, questionData, verifica);
