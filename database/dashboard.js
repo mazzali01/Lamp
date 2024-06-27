@@ -37,8 +37,13 @@ auth.onAuthStateChanged(user => {
     getResults(user).then(results => {
         const total = results.tasks;
         const acertos = results.acertos;
-        const erros = total - acertos;
 
+        var erros = total - acertos;
+
+        if(erros <= 0){
+            erros = 0;
+        }
+        
         const semanaAtual = results.weekProgress.semanaA;
         const semanaPassada = results.weekProgress.semanaP;
         const semanaRetrasada = results.weekProgress.semanaR;

@@ -68,7 +68,7 @@ async function calcPerc(questionLength, topicLength){
         percentual = 0;
     }
     
-    return percentual + '%'
+    return percentual.toFixed(0) + '%'
 }
 
 async function setPerc(uid, topic){

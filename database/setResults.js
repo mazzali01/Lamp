@@ -95,13 +95,13 @@ async function saveUserData(uid, currentQuestion, acertos, exp, firstQuestion) {
             });
             
             let dailyTotalRef = ref(bd,`userResults/${uid}/semana ${semanaAtual}/dia ${correctDiaAtual}`)
+            const totalDiario = await getTotal(refDias, correctDiaAtual);
             await update(dailyTotalRef, {
                 dailyTotal: totalDiario
             })
         }
 
-        const totalDiario = await getTotal(refDias, correctDiaAtual);
-
+        
 
 
         const totalSemanal = await getWeeklyTotal(refSemanas, semanaAtual);
