@@ -178,6 +178,10 @@ li img {
 @media screen and (max-width: 480px) {
     #nav {
         align-items: center;
+        max-height: 12vh;
+    }
+    #nav li a{
+        font-size: 12px;
     }
 
     #inicio {

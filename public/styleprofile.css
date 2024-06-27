@@ -116,14 +116,14 @@ body {
 
 .profileLineLeft {
   display: flex;
-  width: 50%;
+  width: 30%;
   opacity: 70%;
 }
 
 .profileLineRight {
   display: flex;
   align-items: center;
-  width: 50%;
+  width: fit-content;
   height: 100%;
 }
 
@@ -134,6 +134,7 @@ body {
   justify-content: space-evenly;
   height: 10%;
 }
+
 .button {
   height: 75%;
   width: 25%;
@@ -155,6 +156,7 @@ body {
   color: white;
   font-size: clamp(5px, 2vh, 20px);
 }
+
 input {
   border: none;
   background-color: var(--color1);
@@ -174,63 +176,136 @@ input::placeholder {
 /* Responsividade */
 @media screen and (max-width: 1024px) {
   #containerProfile {
+    padding: 0;
   }
+
   #profileCard {
     flex-direction: column;
+    height: 80%;
+    width: 90%;
+  }
+
+  #cardLeft {
+    height: 30%;
     align-items: center;
     justify-content: center;
-    height: 80%;
+    flex-direction: row;
+    width: 100%;
   }
-  #cardLeft {
-    padding-top: 5%;
+
+  #cardLeft img {
+    width: 30%;
+    padding: 5%;
   }
+
+  #cardLeft div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  #cardLeft div h2 {
+    font-size: clamp(15px, 3vh, 40px);
+    ;
+  }
+
+  #cardLeft div p {
+    font-size: clamp(12px, 2vh, 40px);
+    ;
+  }
+
   #cardRight {
     width: 100%;
     padding: 0;
     height: 70%;
   }
 
+  #infoProfile {
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+  }
+
+  #buttonsProfile {
+    height: 20%;
+  }
+
+  .button {
+    height: 50%;
+  }
+
   .profileLine {
     height: 15%;
   }
-  .profileLine .profileLineLeft p {
-    height: 50%;
+
+  .profileLineLeft {
+    width: 50%;
+    padding-right: 10%;
   }
+
   .profileLineLeft,
   .profileLineRight {
     height: 100%;
+    align-items: center;
+  }
+
+  .profileLineRight {
+    width: fit-content;
+  }
+
+  .profileLineRight input {
+    width: 100%;
     padding: 0;
-    margin: 0;
-    align-items: normal;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {}
+
+#cardLeft div {
+  width: 30%;
 }
 
 @media screen and (max-width: 480px) {
   #containerProfile {
-    height: 100vh;
+    padding-top: 8vh;
+    min-height: 80vh;
   }
+
   #profileCard {
     height: 80%;
   }
+
   #cardLeft {
-    height: 20%;
     flex-direction: row;
     width: 100%;
   }
-  #cardLeft img{
+
+  #cardLeft img {
     width: 40%;
     padding: 5%;
   }
-  #cardLeft div{
+
+  #cardLeft div {
     width: 50%;
   }
+
+  #cardLeft div h2 {
+    font-size: clamp(15px, 2vh, 40px);
+    ;
+  }
+
+  #cardLeft div p {
+    font-size: clamp(12px, 1vh, 40px);
+    ;
+  }
+
   #cardRight {
-    height: 800%;
     padding: 0;
     margin: 0;
-    justify-content: normal;
   }
+
+
 }

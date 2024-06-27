@@ -132,9 +132,12 @@ a {
 .trade{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     width: 50%;
+}
+.trade div{
+    padding: 1%;
 }
 
 .buttons {
@@ -154,7 +157,7 @@ input:is([type='button']) {
     border-radius: 8px;
     color: white;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: 0.3s ease;
     border: 1px solid var(--color3);
     padding: 10px;
     display: flex;
@@ -166,6 +169,7 @@ input:is([type='button']) {
 input:is([type='button']):hover {
     cursor: pointer;
     scale: 105%;
+    
 }
 
 
@@ -259,8 +263,15 @@ input:is([type='button']):hover {
 }
 
 @media screen and (max-width: 480px) {
+    #quizopc{
+        height: 40%;
+    }
     .buttons {
         flex-direction: column;
         gap: 10px;
+    }
+    .trade{
+        display: flex;
+        flex-direction: column;
     }
 }
