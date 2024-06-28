@@ -51,15 +51,22 @@ auth.onAuthStateChanged(async function (user){
             quizLength = length;
             currentQuestion = questionAtual;
             firstQuestion = currentQuestion;
-            verifica.addEventListener('click', () => {
-                verificar(currentQuestion, quizLength, acertos, questionData, verifica);
-            });
+        });
+
+        verifica.addEventListener('click', () => {
+            const answer = getSelected();
+            if(answer != undefined || answer != null){
+                verificar(currentQuestion, quizLength, acertos, dados, verifica);
+            }else{
+                alert('Marque alguma das alternativas.')
+            }
+            
         });
 
         // Evento do botão de próxima questão
         nextQuestion.addEventListener('click', async () => {
-            await setResp(uid, currentQuestion);
             const answer = getSelected();
+            await setResp(uid, currentQuestion);
             if (answer === dados.resposta) {
                 acertos++;
                 exp += 20;
@@ -69,9 +76,6 @@ auth.onAuthStateChanged(async function (user){
             if (currentQuestion <= quizLength) {
                 loadQuestion(uid ,acertos, verifica, exp).then(({ questionData }) => {
                     dados = questionData;
-                    verifica.addEventListener('click', () => {
-                        verificar(currentQuestion, quizLength, acertos, questionData, verifica);
-                    });
                 });
             } else {
                 mostrarResultado(acertos, quizLength, exp);

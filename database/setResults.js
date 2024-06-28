@@ -101,10 +101,10 @@ async function saveUserData(uid, currentQuestion, acertos, exp, firstQuestion) {
             })
         }
 
-        
-
-
-        const totalSemanal = await getWeeklyTotal(refSemanas, semanaAtual);
+        var totalSemanal = await getWeeklyTotal(refSemanas, semanaAtual);
+        if(! isFinite(totalSemanal)){
+            totalSemanal = 0;
+        }
         const refWeeklyTotal = ref(bd, `userResults/${uid}/semana ${semanaAtual}/totalSemanal`);
         // // Erro ao salvar os dados: set failed: value argument contains NaN in property 'userResults.M51929f9pSPSzU4R2PyefV9zjE23.semana 1.total'
         await set(refWeeklyTotal, totalSemanal);
