@@ -1,8 +1,31 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set } from "firebase/database";
-import { getAuth, createUserWithEmailAndPassword, updateProfile , sendEmailVerification } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, updateProfile, sendEmailVerification } from "firebase/auth";
 import { logar } from './exportLogin.js';
 import { setPFP, getFile, getDefaultPhoto, file, editFile } from './getPFP.js';
+
+// Função para exibir a tela de loading
+function showLoadingScreen() {
+    fetch('loadingScreen.html')
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector('.loadingScreen').innerHTML = data;
+            document.body.classList.add('no-scroll'); // Adiciona a classe no-scroll ao body
+        })
+        .catch(error => {
+            console.error("Erro ao carregar a tela de carregamento: ", error);
+        });
+}
+
+// Função para ocultar a tela de loading
+function hideLoadingScreen() {
+    const loadingScreen = document.querySelector('.loadingScreen');
+    if (loadingScreen) {
+        loadingScreen.style.display = 'none';
+        loadingScreen.remove();
+        document.body.classList.remove('no-scroll');
+    }
+}
 
 const firebaseConfig = {
     apiKey: "AIzaSyBfJuEDQ7KIPO_feHPmtY4DXRPP-ZqpmVY",
@@ -83,42 +106,40 @@ cropButton.addEventListener('click', () => {
     }
 });
 
-btnCadastro.addEventListener('click', function(e) {
+btnCadastro.addEventListener('click', async function(e) {
     e.preventDefault();
+
+    // Exibir a tela de loading
+    showLoadingScreen();
 
     const emailValue = email.value;
     const senhaValue = senha.value;
 
-    createUserWithEmailAndPassword(auth, emailValue, senhaValue).then((userCredential) => {
+    try {
+        const userCredential = await createUserWithEmailAndPassword(auth, emailValue, senhaValue);
         const user = userCredential.user;
         alert("Usuário criado com sucesso: " + apelido.value);
 
-        updateProfile(user, {
+        await updateProfile(user, {
             displayName: apelido.value
         });
 
         if (croppedBlob) {
             editFile(croppedBlob);
-            setPFP(user);
+            await setPFP(user);
         } else if (file === null) {
             const defaultPhotoPath = getDefaultPhoto();
-            fetch(defaultPhotoPath)
-                .then(response => response.blob())
-                .then(blob => {
-                    editFile(blob);
-                    setPFP(user);
-                }).catch(error => console.error('Erro ao carregar a foto padrão:', error));
+            const response = await fetch(defaultPhotoPath);
+            const blob = await response.blob();
+            editFile(blob);
+            await setPFP(user);
         } else {
-            setPFP(user);
+            await setPFP(user);
         }
 
-        sendEmailVerification(user).then(() => {
-            alert('enviamos um email de verificação de conta para você');
-        }).catch(error => {
-            console.log('erro ao enviar email de verificação')
-        });
-
-        return set(ref(bd, 'user/' + user.uid), {
+        await sendEmailVerification(user);
+        alert('Enviamos um email de verificação de conta para você');
+        await set(ref(bd, 'user/' + user.uid), {
             Apelido: apelido.value,
             Nome: nome.value,
             Email: email.value,
@@ -126,28 +147,23 @@ btnCadastro.addEventListener('click', function(e) {
             Nascimento: dataNasc.value
         });
 
-    }).then(() => {
         console.log("salvo com sucesso");
         logar(e);
-    }).catch(error => {
+    } catch (error) {
+        hideLoadingScreen(); // Ocultar a tela de loading em caso de erro
         console.log("o seguinte erro foi evidenciado: " + error);
         switch(error.message){
             case 'Firebase: Error (auth/invalid-email).':
                 alert('Insira um email válido.');
                 break;
-
             case 'Firebase: Password should be at least 6 characters (auth/weak-password).':
                 alert('Escolha uma senha mais forte.');
                 break;
-
             case 'Firebase: Error (auth/email-already-in-use).':
                 alert('Este email já está sendo utilizado.')
                 break;
-
             default:
                 alert('Ops! Não conseguimos criar a sua conta, tente novamente.')
         }
-
-    });
-
+    }
 });

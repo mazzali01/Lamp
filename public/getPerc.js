@@ -35,9 +35,10 @@ async function getDataTotal(uid, topic){
     const snapshot = await get(dataRef);
     var questionLength = 0;
     if(snapshot){
-        snapshot.forEach( async dificuldade =>{
+        snapshot.forEach(dificuldade =>{
             const data = dificuldade.val();
-            questionLength += (data.length) - 1;
+            
+            questionLength += ((data.length) - 1);
         })
             
     }

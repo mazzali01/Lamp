@@ -18,16 +18,11 @@ const auth      = getAuth(app);
 
 export var file = null;//cria variavel onde será armazenada a foto do user
 
-export function setPFP(user){
+export async function setPFP(user){
 
     const storageRef = ref(storage,'user-pfp/' + user.uid);// cria uma referencia para o storage
     
-    uploadBytes(storageRef, file).then(() =>{// envia a foto do user para o storage
-        console.log('Foto enviada com sucesso!');
-        console.log(file)
-    }).catch((error) =>{
-        console.log('erro ao salvar foto: ' + error.message);
-    })
+    await uploadBytes(storageRef, file)// envia a foto do user para o storage
 }
 
 
@@ -38,7 +33,7 @@ export function getFile(e){//recebe a foto do usuario
     
 // Função para obter a foto padrão
 export function getDefaultPhoto(){
-        return "../public/assets/userPFP.png";// cria uma referencia a ser utilizada na foto padrão
+        return "assets/userPFP.png";// cria uma referencia a ser utilizada na foto padrão
 }
 
 //getPFP

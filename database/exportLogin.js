@@ -40,7 +40,7 @@ function loginUser(auth, userEmail, userSenha){
             const user = auth.currentUser;
             if(user){// se existir um user ele será levado para a tela de dashboard
                 localStorage.setItem('localUser', user);
-                window.location = 'dashboard.html'
+                window.location = 'dashboard.html';
             }else{
                 alert("Erro ao realizar o login")
             }
@@ -54,21 +54,7 @@ function loginUser(auth, userEmail, userSenha){
         })
 }
 
-function loginWithGoogle(e) {
-    e.preventDefault();
-    var provider = new GoogleAuthProvider();
-    signInWithPopup(provider)
-      .then(function(result) {
-        // Sucesso! O usuário está autenticado.
-        var user = result.user;
-        console.log("Usuário autenticado:", user);
-      })
-      .catch(function(error) {
-        // Ocorreu um erro.
-        console.error("Erro ao autenticar:", error);
-      });
-  }
 
-export {logar, loginUser, loginWithGoogle}
+export {logar, loginUser}
 
 //esse arquivo serve somente para exportar o login para ser utilizado em qualquer arquivo que necessitar, foi a unica maneira de exportar uma function que eu consegui fazer funcionar.
