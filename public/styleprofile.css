@@ -1,0 +1,236 @@
+/* Reset de estilos */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "moderna";
+}
+
+/* Estilos para tags de âncora */
+a {
+  text-decoration: none;
+}
+
+/* Importação de fonte */
+@font-face {
+  font-family: "moderna";
+  src: url("assets/Urbanist-Regular.ttf");
+}
+
+/* Variáveis raiz */
+:root {
+  --color1: #daf3ea;
+  --color2: #72d9bb;
+  --color3: #35c594;
+  --color4: #142c4c;
+  --color5: #0d0f36;
+  --padding-1: 30px;
+  --padding-2: 60px;
+  --padding-3: 180px;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+#containerProfile {
+  background: linear-gradient(to bottom, var(--color1), white);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 5% 15%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  font-size: clamp(16px, 1.5vw, 24px);
+}
+
+#profileCard {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border: solid 1px var(--color2);
+  width: 95%;
+  height: 70%;
+  border-radius: 30px;
+}
+
+#cardLeft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  text-align: center;
+}
+
+#cardLeft img {
+  width: 50%;
+  border-radius: 50%;
+  margin-bottom: 3%;
+}
+
+#cardLeft h2 {
+  font-size: clamp(15px, 2vw, 25px);
+  margin-bottom: 2%;
+}
+
+#cardLeft p {
+  font-size: clamp(10px, 1vw, 20px);
+  margin-bottom: 2%;
+}
+
+#cardRight {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: center;
+  height: 100%;
+  padding-right: 5%;
+}
+
+#infoProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70%;
+}
+
+.profileLine {
+  border-radius: 8px;
+  background-color: var(--color1);
+  height: 12%;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  font-size: clamp(12px, 1vw, 20px);
+  padding-left: 5%;
+  margin-bottom: 4%;
+}
+
+.profileLineLeft {
+  display: flex;
+  width: 50%;
+  opacity: 70%;
+}
+
+.profileLineRight {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+#buttonsProfile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 10%;
+}
+.button {
+  height: 75%;
+  width: 25%;
+  border-radius: 8px;
+  background-color: var(--color2);
+  border: solid 1px var(--color3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background-color: var(--color3);
+  cursor: pointer;
+}
+
+.button a {
+  color: white;
+  font-size: clamp(5px, 2vh, 20px);
+}
+input {
+  border: none;
+  background-color: var(--color1);
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: 0.5s;
+}
+
+input::placeholder {
+  font-size: 16px;
+  font-weight: 700;
+  opacity: 80%;
+}
+
+/* Responsividade */
+@media screen and (max-width: 1024px) {
+  #containerProfile {
+  }
+  #profileCard {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+  }
+  #cardLeft {
+    padding-top: 5%;
+  }
+  #cardRight {
+    width: 100%;
+    padding: 0;
+    height: 70%;
+  }
+
+  .profileLine {
+    height: 15%;
+  }
+  .profileLine .profileLineLeft p {
+    height: 50%;
+  }
+  .profileLineLeft,
+  .profileLineRight {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    align-items: normal;
+  }
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 480px) {
+  #containerProfile {
+    height: 100vh;
+  }
+  #profileCard {
+    height: 80%;
+  }
+  #cardLeft {
+    height: 20%;
+    flex-direction: row;
+    width: 100%;
+  }
+  #cardLeft img{
+    width: 40%;
+    padding: 5%;
+  }
+  #cardLeft div{
+    width: 50%;
+  }
+  #cardRight {
+    height: 800%;
+    padding: 0;
+    margin: 0;
+    justify-content: normal;
+  }
+}
