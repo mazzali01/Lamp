@@ -38,25 +38,42 @@ export function getDefaultPhoto(){
 
 //getPFP
 
-export function getPFP(user){// recebe a foto do user ja definida no banco de dados
-    const storageRef = ref(storage,'user-pfp/' + user.uid);
-    getDownloadURL(storageRef).then((url) =>{//baixa o url da imagem
+export function getPFP(user) { // recebe a foto do user já definida no banco de dados
+    const storageRef = ref(storage, 'user-pfp/' + user.uid);
+    getDownloadURL(storageRef).then((url) => { // baixa o URL da imagem
         const img = document.getElementById('pfp');
-        
-        if(img){// caso o elemento img exista
-            img.setAttribute('src', url);//define o src da imagem na pagina de perfil com o url da imagem no storage
-        }
-        
-        const nav = document.getElementById('pfpNav');
-        if(nav){
-            nav.setAttribute('src', url);//mesma coisa do codigo acima
-        }
-        
-    }).catch((error) =>{
-        console.log('erro ao inserir foto de usuario, error: ' + error.message);
-    })
-}
 
+        if (img) { // caso o elemento img exista
+            img.setAttribute('src', url); // define o src da imagem na página de perfil com o URL da imagem no storage
+        }
+
+        const nav = document.getElementById('pfpNav');
+        if (nav) {
+            nav.setAttribute('src', url); // mesma coisa do código acima
+        }
+    }).catch((error) => {
+        if(error.code == 'storage/object-not-found'){
+            const defaultRef = ref(storage, 'user-pfp/userPFP.png');
+            getDownloadURL(defaultRef).then((url) => { // baixa o URL da imagem
+                const img = document.getElementById('pfp');
+        
+                if (img) { // caso o elemento img exista
+                    img.setAttribute('src', url); // define o src da imagem na página de perfil com o URL da imagem no storage
+                }
+        
+                const nav = document.getElementById('pfpNav');
+                if (nav) {
+                    nav.setAttribute('src', url); // mesma coisa do código acima
+                }
+        
+            }).catch(error =>{
+                console.log('erro ao receber foto de perfil: ' + error.message)
+            })
+        }else{
+            console.log('erro ao receber foto de perfil: ' + error.message)
+        }
+    });
+}
 export function editFile(blob){
     file = new File([blob], "userPFP.png", { type: 'image/png' });
 }
