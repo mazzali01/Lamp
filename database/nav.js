@@ -76,7 +76,6 @@ auth.onAuthStateChanged((user) =>{
 
         });
         //adicionando elementos para a lista
-        list.appendChild(store);
         list.appendChild(dashLi);
         list.appendChild(logoutLi);
         list.appendChild(profileLi);
